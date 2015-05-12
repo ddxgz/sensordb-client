@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="sensordb">
+    <CLASSES>
+      <root url="file://$PROJECT_DIR$/libs/sensordb" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+    <jarDirectory url="file://$PROJECT_DIR$/libs/sensordb" recursive="false" />
+  </library>
+</component>
