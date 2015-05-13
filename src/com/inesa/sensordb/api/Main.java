@@ -28,29 +28,14 @@ public class Main {
     public static RedisConnectPool mypool;
 
     public static void main(String[] args){
-        BasicClient client = new BasicClient();
+//        BasicClient client = new BasicClient();
 //        client.putdata();
 //        client.getdata();
-        client.get_tables();
+//        client.get_tables();
 //        client.drop_create_table();
 //        client.multi_put(30, 10000);
 //        client.concurrent_run(1);
 
-//        JsonConvertor jsonconv = new JsonConvertor();
-//        try {
-////            jsonconv.json2java(new FileReader("resource/jsonsample.json"));
-//            jsonconv.sub_json(new FileReader("resource/jsonsample.json"), "values");
-//        } catch (IOException e) {
-//            e.printStackTrace();
-//        }
-////
-//        Map<String, byte[]> values_map = new HashMap<String, byte[]>();
-//        try {
-//            values_map = jsonconv.convert(new FileReader("resource/jsonsample.json"));
-//        } catch (FileNotFoundException e) {
-//            e.printStackTrace();
-//        }
-//        System.out.println("values_map: " + values_map);
 
 
 //        SensordbSub myssb=new SensordbSub(addr, port);
@@ -61,7 +46,7 @@ public class Main {
 //
 //        }
 
-//        test_interface();
+        test_interface();
     }
 
     public static void test_interface() {
@@ -80,17 +65,20 @@ public class Main {
 //        tables = sensordb.tables();
 //        System.out.println("tables: " + tables);
 
-//        String jsonstr = new String();
-//        try {
-//            JsonConvertor jsonconv = new JsonConvertor();
-//            jsonstr = jsonconv.jsonstr(
-//                    new FileReader("resource/jsonsample.json"));
-//        } catch (FileNotFoundException e) {
-//            e.printStackTrace();
-//        }
-//        for(int i=0; i<10; ++i)
-//            for(int j=0; j<10; ++j)
-//                sensordb.put_record(new_table_prefix + String.valueOf(i), jsonstr);
+        String jsonstr = new String();
+        try {
+            JsonConvertor jsonconv = new JsonConvertor();
+            jsonstr = jsonconv.jsonstr(
+                    new FileReader("resource/jsonsample.json"));
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+        for(int i=0; i<10; ++i)
+            sensordb.put_record(new_table_prefix + String.valueOf(i), jsonstr);
+
+        sensordb.get_json_record(new_table_prefix+"1", "sensor_in_json_file",
+                "2015-05-11 01:00:00", "2015-06-12 23:00:00");
+
     }
 
 }

@@ -8,15 +8,17 @@ import java.nio.ByteBuffer;
 import java.util.*;
 
 import com.google.gson.Gson;
+
 import org.cesl.sensordb.client.Connection;
-import org.cesl.sensordb.core.Item;
+import org.cesl.sensordb.client.ResultSet;
+//import org.cesl.sensordb.core.ResultSet;
 import org.cesl.sensordb.exception.DBException;
 
 /**
  * Created by pc on 15/5/12.
  */
 public class SensordbClient implements ClientInterface {
-//    private String sensordb_ip;
+    //    private String sensordb_ip;
 //    private int sensordb_port;
     private Connection conn;
     private List<String> table_list;
@@ -137,9 +139,50 @@ public class SensordbClient implements ClientInterface {
     }
 
 
+    class ResultItem {
+        String id;
+        Long ts;
+        double x;
+        double y;
+        double z;
+    }
+
     @Override
-    public String get_json_record() {
-        return null;
+    public String get_json_record(String table_name, String sensorID,
+                                  String starttime, String endtime) {
+        String jsonstr = "123";
+//        SensordbItem item = new SensordbItem();
+        ResultItem item = new ResultItem();
+//        ResultSet result_set = new ResultSet();
+        try {
+            this.conn.connect();
+            ResultSet result_set = this.conn.get(table_name,
+                    sensorID.getBytes(), starttime, endtime);
+            System.out.println("result_set: " + result_set + " size:"
+                    + result_set.getSize() + " errorcode:" +
+                    result_set.getErrCode());
+
+            while (result_set.next()) {
+                result_set.getString("cf:id");
+                item.id = result_set.getString("cf:id");
+                item.ts = result_set.getLong("cf:ts");
+//                item.x = result_set.getDouble("cf:x");
+//                double y = result_set.getDouble("cf:y");
+//                item.z = result_set.getDouble("z");
+                String tst = result_set.getString("cf:word_separators");
+                System.out.println("item- id:" + item.id + " - ts:" + item.ts+
+                        " tst:"+tst);
+            }
+
+        } catch (DBException e) {
+            e.printStackTrace();
+            System.exit(-1);
+        } finally {
+            System.out.println("get_record finally");
+            conn.close();
+        }
+
+        return jsonstr;
     }
 
     @Override

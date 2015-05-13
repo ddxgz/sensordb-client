@@ -1,13 +1,14 @@
 {
-  "sensorID": "sensor_in_json_file",
-  "timestamp": 1431483861000,
+  "sensorID": "sensor_1234",
+  "timestamp": 1431483863000,
   "x": 1.1,
   "y": 2.2,
   "z": 3.3,
 
   "values": {
-    "font_size": "30",
-    "word_separators": "./\\()\"'-:,.;<>~!@#$%^&*|+=[]{}`~?",
-    "fold_buttons": "true"
+    "ts": 110,
+//    "word_separators": "./\\()\"'-:,.;<>~!@#$%^&*|+=[]{}`~?",
+    "x": false,
+    "id": "id123"
   }
 }

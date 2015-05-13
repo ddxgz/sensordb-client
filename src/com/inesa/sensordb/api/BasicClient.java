@@ -38,34 +38,29 @@ public class BasicClient {
     public static double[] spacexyz = {1.2, 2.3, 3.4};
     public static Map<String, byte[]> sample_values = new HashMap();
     public static Map<String, byte[]> result_map = new HashMap();
-//    public static String value1 = "value1";
-//    public static byte[] value1_b = value1.getBytes();
 
-//    public static Item item1 = new Item();
+
     public static List<Item> items;
     public static ResultSet result_set;
     public static Date date_now = new Date();
     public static double[] timecsv = new double[10];
 
     public void concurrent_run(int num) {
-//        final int num = 10;
         final CountDownLatch begin = new CountDownLatch(1);
         final CountDownLatch end = new CountDownLatch(num);
         List<Double> runningtime = new ArrayList<Double> ();
-
 
         for (int i = 0; i < num; i++) {
             new Thread(new MyWorker(i, begin, end)).start();
         }
 
-        // 睡眠0.1秒
         try {
-            Thread.sleep(100);
+            Thread.sleep(1000);
         } catch (InterruptedException e1) {
             e1.printStackTrace();
         }
 
-        System.out.println("开始进行并发测试");
+        System.out.println("start...");
         begin.countDown();
         long startTime = System.currentTimeMillis();
 
@@ -75,8 +70,8 @@ public class BasicClient {
             e.printStackTrace();
         } finally {
             long endTime = System.currentTimeMillis();
-            System.out.println("结束并发测试 !");
-            System.out.println("花费时间: " + (endTime - startTime));
+            System.out.println(" finish");
+            System.out.println("costs: " + (endTime - startTime));
             FileWriter timeCSV = null;
             try {
                 timeCSV = new FileWriter("timeCSV.csv");
@@ -113,10 +108,10 @@ public class BasicClient {
             double pro_time = 0;
             try {
 
-                System.out.println(this.id + " ready !");
+                System.out.println(this.id + " ready");
                 begin.await();
                 // execute your logic
-                System.out.println(this.id + " start !");
+                System.out.println(this.id + " start");
                 double starttime = System.currentTimeMillis();
                 time_multi_put = client.multi_put(2, 10000);
 
@@ -130,7 +125,7 @@ public class BasicClient {
             } catch (Throwable e) {
                 e.printStackTrace();
             } finally {
-                System.out.println(this.id + " 完成测试 !");
+                System.out.println(this.id + " done");
                 timecsv[id] = time_multi_put[0];
 //                timecsv[id] = pro_time;
                 end.countDown();
@@ -164,8 +159,6 @@ public class BasicClient {
 //            long starttime = System.currentTimeMillis();
 //            System.out.println("start time: " + starttime);
             for (int i = 0; i < num; ++i) {
-//                sample_values.put("key_test" + String.valueOf(i), ("value_" + String.valueOf(i)).getBytes());
-//                System.out.println("i: " + i + "sample_values: " + sample_values);
                 double starttime = System.currentTimeMillis();
 
                 List<Item> items = getItems(item_num);
@@ -173,14 +166,8 @@ public class BasicClient {
                 status = conn.batchPut(table_test_name, items);
                 System.out.println("batchPut status: " + status);
 
-//                System.out.println("date getTime: " + date_now.toString());
-//                status = conn.put(table_test_name, sensorID.getBytes(),
-//                        date_now.getTime(),
-//                        spacexyz[0], spacexyz[1], spacexyz[2],
-//                        sample_values);
                 pro_time[i] = System.currentTimeMillis() - starttime;
 //                System.out.println("pro_time time: " + pro_time[i]);
-
             }
 //            pro_time[i] = System.currentTimeMillis() - starttime;
 //            System.out.println("pro_time time: " + pro_time);
@@ -188,9 +175,8 @@ public class BasicClient {
             e.printStackTrace();
             return new double[]{-1, -1};
         } finally {
-//            conn.dropTable(table_test_name);
-//            System.out.println("dropTable: " + table_test_name);
-            System.out.println("finally");
+
+            System.out.println("multi_put finally");
             conn.close();
         }
         return pro_time;
@@ -213,8 +199,7 @@ public class BasicClient {
             item.z = spacexyz[2]+i;
             item.values = values;
             items.add(item);
-//            System.out.println("item: " + item);
-//            date.wait(5);
+
         }
 
         return items;
@@ -235,8 +220,7 @@ public class BasicClient {
             e.printStackTrace();
             System.exit(-1);
         } finally {
-//            conn.dropTable(table_test_name);
-//            System.out.println("dropTable: " + table_test_name);
+
 //            System.out.println("finally");
             conn.close();
         }
@@ -255,57 +239,6 @@ public class BasicClient {
             System.out.println("table: " + table_test_name + " --get result: "
                     + result_set + " --error code: " + result_set.getErrCode()
                     + " --size: " + result_set.getSize());
-
-//            for (int i = 0; i < result_set.getSize(); ++i) {
-////                result_map = result_set.getRows(0,2);
-//                System.out.println("table: " + table_test_name
-//                        + " --get result next: " + result_set.toString());
-//            }
-
-//            table_list_t2 = conn.listTableNames("table");
-//            System.out.println("listTableNames(\"test1$\"): "
-//                    + table_list_t2);
-
-//            table_t2_exist = conn.isExisted("table_test1");
-//            System.out.println("isExisted(\"table_test1\"): " + table_t2_exist);
-//
-//            conn.createTable(table_test_name);
-//            System.out.println("createTable: " + table_test_name);
-
-//            conn.dropTables("/12$");
-//            conn.dropTable(table_test_name);
-//            System.out.println("dropTable: " + table_test_name);
-//            conn.createTable(table_test_name);
-//            System.out.println("createTable: " + table_test_name);
-
-//            sample_values.put("key3", "value5".getBytes());
-//            sample_values.put("key4", "value6".getBytes());
-//            status = conn.put(table_test_name, sensorID.getBytes(),
-//                    date_now.getTime(),
-//                spacexyz[0], spacexyz[1], spacexyz[2], sample_values);
-//            System.out.println("table: " + table_test_name + " -put status: "
-//                    + status);
-
-//            List<Item> items = getItems(7);
-//            System.out.println("items: " + items);
-//            status = conn.batchPut(table_test_name, items);
-//            System.out.println("table: " + table_test_name + " -put items status: "
-//                    + status);
-            System.out.println("date getTime: " + date_now.toString());
-
-//            result_set = conn.get(table_test_name, sensorID.getBytes(),
-//                    "2015-05-11 01:00:00", "2015-05-12 23:00:00");
-//            System.out.println("table: " + table_test_name + " --get result: "
-//                    + result_set + " --error code: " + result_set.getErrCode()
-//                    + " --size: " + result_set.getSize());
-//
-//            for (int i = 0; i < result_set.getSize(); ++i) {
-////                result_map = result_set.getRows(0,2);
-//                System.out.println("table: " + table_test_name
-//                        + " --get result next: " + result_set.toString());
-//            }
-
-//            System.out.println("return: " + multi_put(conn, 10));
 
         } catch (DBException e) {
             e.printStackTrace();
@@ -331,25 +264,10 @@ public class BasicClient {
             System.out.println("table: " + table_test_name + " --get result: "
                     + result_set + " --error code: " + result_set.getErrCode()
                     + " --size: " + result_set.getSize());
-
-//            List<Row> list_row = result_set.getRows(0,12);
-//            for (int i = 0; i < 12; ++i) {
-            while(result_set.next()){
-//                Row row = result_set.getLong("ts");
-//                Long gotlong = result_set.getLong("cf:id");
-
-//                  List<Row> list_row = result_set.getRows(0,5);
-//                double result_str = result_set.get("cf:id");
-
-//                System.out.println("table: " + table_test_name
-//                        + " --get result_str: " + result_str);
-            }
         } catch (DBException e) {
             e.printStackTrace();
             System.exit(-1);
         } finally {
-//            conn.dropTable(table_test_name);
-//            System.out.println("dropTable: " + table_test_name);
             System.out.println("finally");
             conn.close();
         }
@@ -363,16 +281,11 @@ public class BasicClient {
             table_list = conn.listTableNames();
             System.out.println("table_list: " + table_list);
 
-//            table_list_t2 = conn.listTableNames("^ta.*");
-//            System.out.println("listTableNames(\"test1$\"): "
-//                    + table_list_t2);
-
         } catch (DBException e) {
             e.printStackTrace();
             System.exit(-1);
         } finally {
-//            conn.dropTable(table_test_name);
-//            System.out.println("dropTable: " + table_test_name);
+
             System.out.println("finally");
             conn.close();
         }
@@ -392,14 +305,11 @@ public class BasicClient {
 //            conn.dropTables("/12$");
 //            conn.dropTable(table_test_name);
 //            System.out.println("dropTable: " + table_test_name);
-            conn.createTable("ta123");
-            System.out.println("createTable: " + table_test_name);
+
         } catch (DBException e) {
             e.printStackTrace();
             System.exit(-1);
         } finally {
-//            conn.dropTable(table_test_name);
-//            System.out.println("dropTable: " + table_test_name);
             System.out.println("finally");
             conn.close();
         }

@@ -22,6 +22,7 @@ class SensordbItem {
     public Map<String, String> values_strmap = new HashMap<String, String>();
     public Map<String, Object> values_objmap = new HashMap<String, Object>();
 
+    SensordbItem() {}
 
     SensordbItem(String json_in) {
         set_item(json_in);
