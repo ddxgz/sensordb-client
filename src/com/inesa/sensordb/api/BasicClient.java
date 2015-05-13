@@ -157,8 +157,9 @@ public class BasicClient {
 
     public double[] multi_put(int num, int item_num) {
         double[] pro_time = new double[num];
+        Connection conn = new Connection(sensordb_ip, sensordb_post);
+
         try {
-            Connection conn = new Connection(sensordb_ip, sensordb_post);
             conn.connect();
 //            long starttime = System.currentTimeMillis();
 //            System.out.println("start time: " + starttime);
@@ -186,6 +187,11 @@ public class BasicClient {
         } catch (Exception e) {
             e.printStackTrace();
             return new double[]{-1, -1};
+        } finally {
+//            conn.dropTable(table_test_name);
+//            System.out.println("dropTable: " + table_test_name);
+            System.out.println("finally");
+            conn.close();
         }
         return pro_time;
     }
@@ -340,7 +346,7 @@ public class BasicClient {
 //                System.out.println("table: " + table_test_name
 //                        + " --get result_str: " + result_str);
             }
-        }catch (DBException e) {
+        } catch (DBException e) {
             e.printStackTrace();
             System.exit(-1);
         } finally {
@@ -351,7 +357,7 @@ public class BasicClient {
         }
     }
 
-    public void getTables() {
+    public void get_tables() {
         Connection conn = new Connection(sensordb_ip, sensordb_post);
         try {
             conn.connect();
@@ -363,8 +369,7 @@ public class BasicClient {
 //            System.out.println("listTableNames(\"test1$\"): "
 //                    + table_list_t2);
 
-
-        }catch (DBException e) {
+        } catch (DBException e) {
             e.printStackTrace();
             System.exit(-1);
         } finally {
@@ -375,7 +380,7 @@ public class BasicClient {
         }
     }
 
-        public void drop_create_table() {
+    public void drop_create_table() {
         Connection conn = new Connection(sensordb_ip, sensordb_post);
         try {
             conn.connect();
