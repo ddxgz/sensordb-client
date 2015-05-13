@@ -224,7 +224,6 @@ public class BasicClient {
         Connection conn = new Connection(sensordb_ip, sensordb_post);
         try {
             conn.connect();
-
 //            sample_values.put("key3", "value5".getBytes());
 //            sample_values.put("key4", "value6".getBytes());
             status = conn.put(table_test_name, sensorID.getBytes(),
@@ -232,7 +231,6 @@ public class BasicClient {
                 spacexyz[0], spacexyz[1], spacexyz[2], sample_values);
 //            System.out.println("table: " + table_test_name + " -put status: "
 //                    + status);
-
         } catch (DBException e) {
             e.printStackTrace();
             System.exit(-1);
