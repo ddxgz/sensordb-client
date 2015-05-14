@@ -44,18 +44,21 @@ public class Main {
 //        client.multi_put(30, 10000);
 //        client.concurrent_run(1);
 
-        SensordbClient sensordb = new SensordbClient(sensordb_ip, sensordb_port);
+        Connection conn = new Connection(sensordb_ip, sensordb_port);
+//        conn.connect();
+//        SensordbClient sensordb = new SensordbClient(sensordb_ip, sensordb_port);
+        SensordbClient sensordb = new SensordbClient(conn);
+
         List<String> tables = new ArrayList<>();
         tables = sensordb.tables();
         System.out.println("tables: " + tables);
 //
-//        put_from_redis();
+//        put_from_redis(conn);
 
         for(int i=0; i<10; ++i)
-            put_performance(1000);
+            put_performance(conn, 1000);
 
 
-        Connection conn = new Connection(sensordb_ip, sensordb_port);
         conn.connect();
         ResultSet result_set = conn.get(new_table_prefix + "1",
                             "2015-05-14 05:55:00", "2015-05-14 23:00:00");
@@ -73,11 +76,11 @@ public class Main {
     }
 
 
-    public static void put_performance(int num) {
+    public static void put_performance(Connection conn, int num) {
         JsonConvertor jsonconv = new JsonConvertor();
         Map<String, byte[]> values_map = new HashMap<>();
         List<String> list_in = new ArrayList<>();
-        Connection conn = new Connection(sensordb_ip, sensordb_port);
+//        Connection conn = new Connection(sensordb_ip, sensordb_port);
 
         try {
             conn.connect();
@@ -130,14 +133,14 @@ public class Main {
         return items;
     }
 
-    public static void put_from_redis() {
+    public static void put_from_redis(Connection conn) {
         List<String> list_in = new ArrayList<>();
-        Connection conn = new Connection(sensordb_ip, sensordb_port);
+//        Connection conn = new Connection(sensordb_ip, sensordb_port);
         int cnt = 0;
         long receive_cnt = 0;
 
         try {
-            conn.connect();
+//            conn.connect();
             SensordbSub myssb=new SensordbSub(addr, port);
             while(myssb.listen()){
                 list_in = myssb.getRead();
@@ -163,12 +166,12 @@ public class Main {
                 }
                 logger.info("from redis all:" + receive_cnt);
             }
-        } catch (DBException e) {
-            e.printStackTrace();
-            System.exit(-1);
+//        } catch (DBException e) {
+//            e.printStackTrace();
+//            System.exit(-1);
         } finally {
             System.out.println("put_from_redis finally");
-            conn.close();
+//            conn.close();
         }
     }
 

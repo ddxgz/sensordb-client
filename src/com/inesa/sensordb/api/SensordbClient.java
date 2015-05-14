@@ -24,12 +24,29 @@ public class SensordbClient implements ClientInterface {
     private List<String> table_list;
 
 
+    SensordbClient(Connection conn) {
+//        this.sensordb_ip = sensordb_ip;
+//        this.int = sensordb_port;
+        this.conn = conn;
+
+    }
+
     SensordbClient(String sensordb_ip, int sensordb_port) {
 //        this.sensordb_ip = sensordb_ip;
 //        this.int = sensordb_port;
         this.conn = new Connection(sensordb_ip, sensordb_port);
 
     }
+
+//    @Override
+//    public void close() throws Exception{
+//        System.out.println("close()...");
+//    }
+//
+//    @Override
+//    protected void finalize() throws Throwable {
+//        super.finalize();
+//    }
 
     @Override
     public int create_table(String table_name) {
@@ -107,8 +124,8 @@ public class SensordbClient implements ClientInterface {
 
         try {
             this.conn.connect();
-//            status = conn.put(table_name, item.sensorID, item.timestamp,
-//                    item.x, item.y, item.z, item.values);
+            status = conn.put(table_name, item.sensorID, item.timestamp,
+                    item.x, item.y, item.z, item.values);
 //            System.out.println("table: " + table_test_name + " -put status: "
 //                    + status);
 

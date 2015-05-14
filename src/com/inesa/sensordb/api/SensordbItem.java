@@ -19,7 +19,7 @@ class SensordbItem {
 
     private ItemWithoutValue item_without_value = new ItemWithoutValue();
     private String values_str;
-    private Map<String, String> values_strmap = new HashMap<String, String>();
+//    private Map<String, String> values_strmap = new HashMap<String, String>();
     private Map<String, Object> values_objmap = new HashMap<String, Object>();
 
     SensordbItem() {}
