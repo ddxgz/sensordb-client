@@ -100,7 +100,7 @@ public class JedisPool extends JedisPoolAbstract {
     return jedis;
   }
 
-  protected void returnBrokenResource(final Jedis resource) {
+  public void returnBrokenResource(final Jedis resource) {
     if (resource != null) {
       returnBrokenResourceObject(resource);
     }

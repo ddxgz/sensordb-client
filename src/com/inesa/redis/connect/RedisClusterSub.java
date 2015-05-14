@@ -17,7 +17,7 @@ public class RedisClusterSub {
 
     RedisClusterSub(String Redis_Cluster_Addr,int Redis_Cluster_Port){
         try{
-            jedisClusterNodes = new HashSet<HostAndPort>();
+            jedisClusterNodes = new HashSet<>();
             HostAndPort hap=new HostAndPort(Redis_Cluster_Addr,Redis_Cluster_Port);
             jedisClusterNodes.add(hap);
 
@@ -39,7 +39,7 @@ public class RedisClusterSub {
             try {
                 //test for set/get in cluster
                 jc.set("test_redis_cluster_A0FE", "Ok");
-                String getval=jc.get("test_redis_cluster_A0FE").toString();
+                String getval=jc.get("test_redis_cluster_A0FE");
                 if (getval==null){
                     System.err.print("Something wrong happened when set/get the value in cluster");
                 }
@@ -50,7 +50,6 @@ public class RedisClusterSub {
             }catch(Exception e)
             {
                 System.err.print(e.toString());
-                return res;
             }
         }
         return res;

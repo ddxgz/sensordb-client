@@ -157,21 +157,21 @@ public class SensordbClient implements ClientInterface {
         try {
             this.conn.connect();
             ResultSet result_set = this.conn.get(table_name,
-                    sensorID.getBytes(), starttime, endtime);
+                    /*sensorID.getBytes(),*/ starttime, endtime);
             System.out.println("result_set: " + result_set + " size:"
                     + result_set.getSize() + " errorcode:" +
                     result_set.getErrCode());
 
             while (result_set.next()) {
-                result_set.getString("cf:id");
-                item.id = result_set.getString("cf:id");
-                item.ts = result_set.getLong("cf:ts");
-//                item.x = result_set.getDouble("cf:x");
-//                double y = result_set.getDouble("cf:y");
+                result_set.getString("id");
+                item.id = result_set.getString("id");
+                item.ts = result_set.getLong("ts");
+//                item.x = result_set.getDouble("x");
+//                item.y = result_set.getDouble("y");
 //                item.z = result_set.getDouble("z");
-                String tst = result_set.getString("cf:word_separators");
-                System.out.println("item- id:" + item.id + " - ts:" + item.ts+
-                        " tst:"+tst);
+//                String tst = result_set.getString("word_separators");
+                System.out.println("item- id:" + item.id + " - ts:" + item.ts/*+
+                        " tst:"+tst+" x:"+item.x+" y:"+item.y+" z:"+item.z*/);
             }
 
         } catch (DBException e) {

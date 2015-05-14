@@ -7,32 +7,17 @@ public class Main {
     public static RedisConnectPool mypool;
     public static void notmain(String[] args) {
 	// write your code her
-        /*mypool=new RedisConnectPool(1,addr,port);
-        mypool.createPool();
-
-        new Thread(new Runnable() {
-            public void run() {
-                try {
-                    RedisClusterSub sub= mypool.getRedisCLusterSub();
-                    sub.jc.subscribe(new JedisPubSub() {
-                        @Override
-                        public void onMessage(String channel, String message) {
-                            super.onMessage(channel, message);
-                            System.err.print(message);
-                        }
-                    }, "sensorDB");
-
-                } catch (Exception e) {
-                    System.err.print(e.toString());
-                }
-            }
-        }).start();*/
-
-
+        //Cluster Method
         SensordbSub myssb=new SensordbSub(addr,port);
         while(myssb.listen()){
-            System.err.print(myssb.getRead().toString());
+            System.err.print(myssb.getRead().toString()+"\n");
         }
+
+        //SingleNode Method, more recommand
+        /*RedisSub rs=new RedisSub(addr,port);
+        while(rs.listen()){
+            System.err.print(rs.getRead().toString()+"\n");
+        }*/
     }
 
 }

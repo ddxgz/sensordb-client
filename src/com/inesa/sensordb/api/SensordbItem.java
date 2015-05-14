@@ -19,8 +19,8 @@ class SensordbItem {
 
     private ItemWithoutValue item_without_value = new ItemWithoutValue();
     private String values_str;
-    public Map<String, String> values_strmap = new HashMap<String, String>();
-    public Map<String, Object> values_objmap = new HashMap<String, Object>();
+    private Map<String, String> values_strmap = new HashMap<String, String>();
+    private Map<String, Object> values_objmap = new HashMap<String, Object>();
 
     SensordbItem() {}
 
@@ -62,7 +62,7 @@ class SensordbItem {
 
     }
 
-    public void set_item_byfile(String json_in) {
+    public void set_item_byfile(String json_file) {
         JsonConvertor jsonconv = new JsonConvertor();
         try {
 //                jsonconv.json2java(new FileReader(json_in));
