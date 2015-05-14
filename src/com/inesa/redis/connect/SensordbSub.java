@@ -1,30 +1,29 @@
 package com.inesa.redis.connect;
 
-import redis.clients.jedis.JedisPubSub;
-
+import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
 
+import static java.lang.System.*;
+
 /**
  * Created by shihj on 5/11/15.
  */
-public class SensordbSub {
+public class SensordbSub implements SensordbSubThread.ICallback{
     public static RedisConnectPool mypool;
 
-    private Lock lockbuf1=new ReentrantLock();
-    public final static LinkedList<String> readbuf1=new LinkedList<>();
-    public final static LinkedList<String> readbuf2=new LinkedList<>();
+    private Lock lockBuf1=new ReentrantLock();
+    public final static ArrayList<String> readbuf1=new ArrayList<String>(100);
+    public final static ArrayList<String> readbuf2=new ArrayList<String>(100);
 
     static int max=10;
     static String addr="10.200.46.245";
     static int port=7000;
-    static String connectChannel="sensorDB";
 
-    private RedisClusterSub sub;
-    private LinkedList<SensordbSubThread> sdbst;
-    public boolean kill=false;
-
+    private RedisClusterSub clusterSub;
+    private RedisSub sub;
+    private static LinkedList<SensordbSubThread> sdbst;
     private static volatile boolean message_comming=false;
 
     public SensordbSub(String redisAddr, int redisPort){
@@ -32,10 +31,15 @@ public class SensordbSub {
         addr=redisAddr;
         port=redisPort;
         mypool=new RedisConnectPool(1,addr,port);
-        if (mypool.createPool()==0)
-            System.err.print("CreatePool failed");
-        else
-            sub= mypool.getRedisCLusterSub();
+        if (mypool.createPool()==0) {
+            err.print("CreatePool failed, try normal Redis\n");
+            sub=new RedisSub(redisAddr,redisPort);
+            clusterSub=null;
+        }
+        else {
+            clusterSub = mypool.getRedisCLusterSub();
+            sub=null;
+        }
     }
 
     public SensordbSub(int maxlink,String redisAddr, int redisPort){
@@ -43,24 +47,46 @@ public class SensordbSub {
         addr=redisAddr;
         port=redisPort;
         mypool=new RedisConnectPool(max,addr,port);
-        if (mypool.createPool()==0)
-            System.err.print("CreatePool failed");
-        else
-            sub= mypool.getRedisCLusterSub();
+        if (mypool.createPool()==0) {
+            err.print("CreatePool failed, try normal Redis\n");
+            sub=new RedisSub(redisAddr,redisPort);
+            clusterSub=null;
+        }
+        else {
+            clusterSub = mypool.getRedisCLusterSub();
+            sub=null;
+        }
     }
 
     public boolean listen(){
-        if(sub==null) {
-            mypool.dumpPool(max,addr,port);
-            sub = mypool.getRedisCLusterSub();
-            if (sub==null)
+        if(sub==null&&clusterSub==null) {
+            if (mypool.createPool()==0) {
+                err.print("CreatePool failed, try normal Redis\n");
+                sub=new RedisSub(addr,port);
+                clusterSub=null;
+            }
+            else {
+                clusterSub = mypool.getRedisCLusterSub();
+                sub=null;
+            }
+            if (sub==null&&clusterSub==null)
                 return false;
         }
         if(sdbst==null){
-            sdbst=new LinkedList<>();
-            SensordbSubThread temp1=new SensordbSubThread();
+            sdbst=new LinkedList<SensordbSubThread>();
+            SensordbSubThread temp1;
+            if (sub==null){
+                temp1=new SensordbSubThread(clusterSub,this);
+                temp1.start();
+            }
+            else if(clusterSub==null) {
+                temp1 = new SensordbSubThread(sub,this);
+                temp1.start();
+            }
+            else
+                temp1=null;
             sdbst.add(temp1);
-            temp1.start();
+
         }
 
         while(!message_comming)
@@ -71,27 +97,13 @@ public class SensordbSub {
         return true;
     }
 
-    public int destroy(){
-        if(sdbst.size()>0)
-        {
-            kill=true;
-        }
-        sdbst.clear();
-        while(!lockbuf1.tryLock()){
-            readbuf1.clear();
-            lockbuf1.unlock();
-        }
-        readbuf2.clear();
-        return 1;
-    }
-
     public LinkedList<String> getRead(){
-        LinkedList<String> retVal = new LinkedList<>();
-        if (lockbuf1.tryLock())
+        LinkedList<String> retVal=new LinkedList<String>();
+        if (lockBuf1.tryLock())
         {
             retVal.addAll(readbuf1);
             readbuf1.clear();
-            lockbuf1.unlock();
+            lockBuf1.unlock();
         }else{
             retVal.addAll(readbuf2);
             readbuf2.clear();
@@ -100,41 +112,31 @@ public class SensordbSub {
         return retVal;
     }
 
-
-
-    class SensordbSubThread extends Thread{
-
-        public void run() {
-            while(true) {
-                try {
-
-                    sub.jc.subscribe(new JedisPubSub() {
-                        @Override
-                        public void onMessage(String channel, String message) {
-                            super.onMessage(channel, message);
-
-                            if (lockbuf1.tryLock())
-                            {
-                                message_comming = true;
-                                readbuf1.add(message);
-                                lockbuf1.unlock();
-                            }else{
-                                message_comming = true;
-                                readbuf2.add(message);
-                            }
-                        }
-                    }, connectChannel);
-
-                } catch (Exception e) {
-                    System.err.print(e.toString());
-                    break;
-                }
-                if (kill)
-                {
-                    break;
-                }
+    public int destroy(){
+        if(sdbst!=null&&sdbst.size()>0)
+        {
+            for(SensordbSubThread sst :sdbst){
+                sst.kill();
             }
+            sdbst.clear();
         }
+        sdbst=null;
+        while(!lockBuf1.tryLock()){
+            readbuf1.clear();
+            lockBuf1.unlock();
+        }
+        readbuf2.clear();
+        return 1;
+    }
+
+    public void messageCome(String message,String channel) {
+        if (lockBuf1.tryLock()) {
+            readbuf1.add(message);
+            lockBuf1.unlock();
+        } else {
+            readbuf2.add(message);
+        }
+        message_comming=true;
     }
 
 }

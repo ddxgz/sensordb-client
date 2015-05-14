@@ -16,8 +16,8 @@ public class RedisConnectPool {
 
     public RedisConnectPool(int maxConnect,String Redis_Cluster_Addr,int Redis_Cluster_Port){
         maxConnectLink=maxConnect;
-        usedLink=new ArrayList<>();
-        freeLink=new ArrayList<>();
+        usedLink=new ArrayList<RedisClusterSub>();
+        freeLink=new ArrayList<RedisClusterSub>();
         Addr=Redis_Cluster_Addr;
         Port=Redis_Cluster_Port;
 
@@ -35,7 +35,7 @@ public class RedisConnectPool {
                     actualCapacity++;
                 }
                 else {
-                    System.err.print("Connect to Redis Cluster Error, Please Check!");
+                    System.err.print("Connect to Redis Cluster Error, Please Check!\n");
                     return 0;
                 }
             }
@@ -73,12 +73,11 @@ public class RedisConnectPool {
     public int dumpPool(int maxLink,String Redis_Cluster_Addr,int Redis_Cluster_Port){
         try {
             if ((freeLink == null) || (usedLink == null)) {
-                freeLink = new ArrayList<>();
-                usedLink = new ArrayList<>();
+                freeLink = new ArrayList<RedisClusterSub>();
+                usedLink = new ArrayList<RedisClusterSub>();
             }
             if (freeLink.isEmpty() && usedLink.isEmpty()) {
                 maxConnectLink = maxLink;
-                createPool();
             }
             for (RedisClusterSub rcb : usedLink) {
                 rcb.destroy();

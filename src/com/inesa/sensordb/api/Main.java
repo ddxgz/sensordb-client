@@ -29,7 +29,7 @@ public class Main {
 
     static int max=10;
     static String addr="10.200.46.245";
-    static int port=7003;
+    static int port=6379;
     public static RedisConnectPool mypool;
 
     // get a logger instance named "com.foo"

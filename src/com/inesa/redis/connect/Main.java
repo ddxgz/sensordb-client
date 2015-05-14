@@ -1,23 +1,25 @@
 package com.inesa.redis.connect;
 
 public class Main {
-    static int max=10;
     static String addr="10.200.46.245";
-    static int port=7003;
-    public static RedisConnectPool mypool;
-    public static void notmain(String[] args) {
-	// write your code her
-        //Cluster Method
-        SensordbSub myssb=new SensordbSub(addr,port);
-        while(myssb.listen()){
-            System.err.print(myssb.getRead().toString()+"\n");
-        }
+    static int port=6379;
 
-        //SingleNode Method, more recommand
-        /*RedisSub rs=new RedisSub(addr,port);
-        while(rs.listen()){
-            System.err.print(rs.getRead().toString()+"\n");
-        }*/
+    public static void main(String[] args) {
+	// write your code her
+
+    int num=0;
+    SensordbSub myssb=new SensordbSub(addr,port);
+    while(myssb.listen()){
+        myssb.getRead();
+        //System.err.print(myssb.getRead()+"\n");
+//        try {
+//            Thread.sleep(1000);
+//        } catch (InterruptedException e) {
+//            e.printStackTrace();
+//        }
+    }
+    myssb.destroy();
+
     }
 
 }

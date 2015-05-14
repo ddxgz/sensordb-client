@@ -8,6 +8,8 @@ import java.io.IOException;
 import java.util.HashSet;
 import java.util.Set;
 
+import static java.lang.System.err;
+
 /**
  * Created by shihj on 5/11/15.
  */
@@ -17,13 +19,13 @@ public class RedisClusterSub {
 
     RedisClusterSub(String Redis_Cluster_Addr,int Redis_Cluster_Port){
         try{
-            jedisClusterNodes = new HashSet<>();
+            jedisClusterNodes = new HashSet<HostAndPort>();
             HostAndPort hap=new HostAndPort(Redis_Cluster_Addr,Redis_Cluster_Port);
             jedisClusterNodes.add(hap);
 
         }catch (Exception e)
         {
-            System.err.print(e.toString());
+            err.print(e.toString());
         }
     }
 
@@ -33,23 +35,22 @@ public class RedisClusterSub {
             jc=new JedisCluster(jedisClusterNodes,500);
         }catch(Exception e)
         {
-            System.err.print(e.toString());
+            err.print(e.toString());
             return res;
         }finally {
             try {
                 //test for set/get in cluster
                 jc.set("test_redis_cluster_A0FE", "Ok");
                 String getval=jc.get("test_redis_cluster_A0FE");
-                if (getval==null){
-                    System.err.print("Something wrong happened when set/get the value in cluster");
-                }
-                else{
+                if ("Ok".equals(getval)) {
                     jc.del("test_redis_cluster_A0FE");
                     res=1;
+                } else {
+                    err.print("Something wrong happened when set/get the value in cluster\n");
                 }
             }catch(Exception e)
             {
-                System.err.print(e.toString());
+                err.print(e.toString());
             }
         }
         return res;
