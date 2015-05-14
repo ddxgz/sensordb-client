@@ -141,7 +141,7 @@ public class JsonConvertor {
         JsonElement je = jo.get(name);
         jsonstr_sub = gson.toJson(je);
 //        jsonstr_sub = gson.fromJson("\"abc\"", String.class);
-        System.out.println("jsonstr_sub: " + jsonstr_sub);
+//        System.out.println("jsonstr_sub: " + jsonstr_sub);
 
         return jsonstr_sub;
     }
@@ -152,7 +152,7 @@ public class JsonConvertor {
         try {
             values_map = new Gson().fromJson(jsonstr,
                     new TypeToken<HashMap<String, Object>>() {}.getType());
-            System.out.println("sample_values: " + values_map);
+//            System.out.println("sample_values: " + values_map);
 
         } catch (Exception e) {
             e.printStackTrace();
@@ -175,7 +175,7 @@ public class JsonConvertor {
 
             values_map = new Gson().fromJson(buf_reader,
                     new TypeToken<HashMap<String, Object>>() {}.getType());
-            System.out.println("sample_values: " + values_map);
+//            System.out.println("sample_values: " + values_map);
 
         } catch (Exception e) {
             e.printStackTrace();
@@ -193,7 +193,7 @@ public class JsonConvertor {
         try {
             values_map = new Gson().fromJson(jsonstr,
                     new TypeToken<HashMap<String, Object>>() {}.getType());
-            System.out.println("sample_values: " + values_map);
+//            System.out.println("sample_values: " + values_map);
 
         } catch (Exception e) {
             e.printStackTrace();
@@ -211,7 +211,7 @@ public class JsonConvertor {
         try {
             values_map = new Gson().fromJson(jsonstr,
                     new TypeToken<HashMap<String, Object>>() {}.getType());
-            System.out.println("sample_values: " + values_map);
+//            System.out.println("sample_values: " + values_map);
 
         } catch (Exception e) {
             e.printStackTrace();

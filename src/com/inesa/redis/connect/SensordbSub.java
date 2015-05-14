@@ -86,7 +86,7 @@ public class SensordbSub {
     }
 
     public LinkedList<String> getRead(){
-        LinkedList<String> retVal=new LinkedList<>();
+        LinkedList<String> retVal = new LinkedList<>();
         if (lockbuf1.tryLock())
         {
             retVal.addAll(readbuf1);

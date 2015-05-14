@@ -39,9 +39,10 @@ public class SensordbClient implements ClientInterface {
         } catch (DBException e) {
             e.printStackTrace();
             System.exit(-1);
+//            return 0;
         } finally {
             System.out.println("finally create_table:[" + table_name + "]...");
-            this.table_list = refresh_table_list();
+            refresh_table_list();
             conn.close();
         }
         return 1;
@@ -49,15 +50,15 @@ public class SensordbClient implements ClientInterface {
 
     @Override
     public List<String> tables() {
-        this.table_list = refresh_table_list();
+        refresh_table_list();
         return this.table_list;
     }
 
-    private List<String> refresh_table_list() {
+    private void refresh_table_list() {
         List<String> table_list = new ArrayList<String>();
         try {
             this.conn.connect();
-            table_list = conn.listTableNames();
+            this.table_list = conn.listTableNames();
 //            System.out.println("table_list: " + table_list);
         } catch (DBException e) {
             e.printStackTrace();
@@ -68,7 +69,7 @@ public class SensordbClient implements ClientInterface {
             System.out.println("finally refresh_table_list...");
             conn.close();
         }
-        return table_list;
+//        return table_list;
     }
 
     @Override
@@ -86,7 +87,7 @@ public class SensordbClient implements ClientInterface {
             System.exit(-1);
         } finally {
             System.out.println("finally delete_table: [" + table_name + "] ...");
-            this.table_list = refresh_table_list();
+            refresh_table_list();
             conn.close();
         }
         return 1;
@@ -106,11 +107,37 @@ public class SensordbClient implements ClientInterface {
 
         try {
             this.conn.connect();
-            status = conn.put(table_name, item.sensorID, item.timestamp,
-                    item.x, item.y, item.z, item.values);
+//            status = conn.put(table_name, item.sensorID, item.timestamp,
+//                    item.x, item.y, item.z, item.values);
 //            System.out.println("table: " + table_test_name + " -put status: "
 //                    + status);
 
+        } catch (DBException e) {
+            e.printStackTrace();
+            System.exit(-1);
+        } finally {
+//            conn.dropTable(table_test_name);
+//            System.out.println("dropTable: " + table_test_name);
+//            System.out.println("finally");
+            conn.close();
+        }
+        return status;
+    }
+
+
+    //TODO
+    public int put_record_safe(String table_name, String json_value) {
+//        Map<String, byte[]> values_map = new HashMap<String, byte[]>();
+//        JsonConvertor jsonconv = new JsonConvertor();
+        int status = 0;
+        SensordbItem item = new SensordbItem(json_value);
+
+        int put_status = put_record(table_name, json_value);
+
+        try {
+            this.conn.connect();
+//            status = conn.get(table_name, item.sensorID, item.timestamp,
+//                    item.x, item.y, item.z, item.values);
         } catch (DBException e) {
             e.printStackTrace();
             System.exit(-1);
@@ -141,23 +168,27 @@ public class SensordbClient implements ClientInterface {
 
     class ResultItem {
         String id;
-        Long ts;
+        long ts;
         double x;
         double y;
         double z;
+        Map<String, String> values = new HashMap<>();
     }
 
     @Override
-    public String get_json_record(String table_name, String sensorID,
-                                  String starttime, String endtime) {
-        String jsonstr = "123";
+    public List<String> get_json_record(String table_name, String sensorID,
+                                  String starttime, String endtime,
+                                  List<String> valuekeys) {
+        String jsonstr = " ";
+        List<String> json_list = new ArrayList<>();
+        Gson gson = new Gson();
 //        SensordbItem item = new SensordbItem();
         ResultItem item = new ResultItem();
 //        ResultSet result_set = new ResultSet();
         try {
             this.conn.connect();
             ResultSet result_set = this.conn.get(table_name,
-                    /*sensorID.getBytes(),*/ starttime, endtime);
+                    sensorID.getBytes(), starttime, endtime);
             System.out.println("result_set: " + result_set + " size:"
                     + result_set.getSize() + " errorcode:" +
                     result_set.getErrCode());
@@ -166,12 +197,19 @@ public class SensordbClient implements ClientInterface {
                 result_set.getString("id");
                 item.id = result_set.getString("id");
                 item.ts = result_set.getLong("ts");
-//                item.x = result_set.getDouble("x");
-//                item.y = result_set.getDouble("y");
-//                item.z = result_set.getDouble("z");
+                item.x = result_set.getDouble("x");
+                item.y = result_set.getDouble("y");
+                item.z = result_set.getDouble("z");
 //                String tst = result_set.getString("word_separators");
+                for (int i=0; i<valuekeys.size(); ++i){
+                    item.values.put(valuekeys.get(i),
+                            result_set.getString(valuekeys.get(i)));
+                }
                 System.out.println("item- id:" + item.id + " - ts:" + item.ts/*+
-                        " tst:"+tst+" x:"+item.x+" y:"+item.y+" z:"+item.z*/);
+                        " tst:"+tst+" x:"+item.x+" y:"+item.y+" z:"+item.z*/
+                        +"values: "+item.values);
+                jsonstr = gson.toJson(item);
+                json_list.add(jsonstr);
             }
 
         } catch (DBException e) {
@@ -182,8 +220,9 @@ public class SensordbClient implements ClientInterface {
             conn.close();
         }
 
-        return jsonstr;
+        return json_list;
     }
+
 
     @Override
     public String get_records() {

@@ -1,0 +1,6 @@
+2015-05-14 13:30:53 [main:0] - [INFO] [Main:223] [test_interface] Hello, World!
+2015-05-14 13:31:02 [main:0] - [INFO] [Main:223] [test_interface] Hello, World!
+2015-05-14 13:32:15 [main:0] - [INFO] [Main:99] [put_performance] duration: 7
+2015-05-14 13:32:18 [main:2878] - [INFO] [Main:99] [put_performance] duration: 0
+2015-05-14 13:32:19 [main:3983] - [INFO] [Main:99] [put_performance] duration: 0
+2015-05-14 13:32:20 [main:4918] - [INFO] [Main:99] [put_performance] duration: 0

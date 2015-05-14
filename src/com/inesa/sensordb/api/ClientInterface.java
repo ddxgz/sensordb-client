@@ -37,8 +37,9 @@ public interface ClientInterface {
     int delete_records();
 
     //return a json string
-    String get_json_record(String table_name, String sensorID,
-                           String starttime, String endtime);
+    List<String> get_json_record(String table_name, String sensorID,
+                           String starttime, String endtime,
+                           List<String> valuekeys);
 
     String get_records();
 }
