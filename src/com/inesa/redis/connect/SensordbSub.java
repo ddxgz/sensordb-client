@@ -5,7 +5,7 @@ import java.util.LinkedList;
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
 
-import static java.lang.System.*;
+import static java.lang.System.err;
 
 /**
  * Created by shihj on 5/11/15.
@@ -15,7 +15,6 @@ public class SensordbSub implements SensordbSubThread.ICallback{
 
     private Lock lockBuf1=new ReentrantLock();
     public final static ArrayList<String> readbuf1=new ArrayList<String>(100);
-    public final static ArrayList<String> readbuf2=new ArrayList<String>(100);
 
     static int max=10;
     static String addr="10.200.46.245";
@@ -97,17 +96,13 @@ public class SensordbSub implements SensordbSubThread.ICallback{
         return true;
     }
 
-    public LinkedList<String> getRead(){
-        LinkedList<String> retVal=new LinkedList<String>();
-        if (lockBuf1.tryLock())
-        {
-            retVal.addAll(readbuf1);
-            readbuf1.clear();
-            lockBuf1.unlock();
-        }else{
-            retVal.addAll(readbuf2);
-            readbuf2.clear();
-        }
+    public ArrayList<String> getRead(){
+        ArrayList<String> retVal=new ArrayList<String>();
+        lockBuf1.lock();
+        retVal.addAll(readbuf1);
+        readbuf1.clear();
+        lockBuf1.unlock();
+
         message_comming = false;
         return retVal;
     }
@@ -125,17 +120,14 @@ public class SensordbSub implements SensordbSubThread.ICallback{
             readbuf1.clear();
             lockBuf1.unlock();
         }
-        readbuf2.clear();
         return 1;
     }
 
     public void messageCome(String message,String channel) {
-        if (lockBuf1.tryLock()) {
-            readbuf1.add(message);
-            lockBuf1.unlock();
-        } else {
-            readbuf2.add(message);
-        }
+
+        lockBuf1.lock();
+        readbuf1.add(message);
+        lockBuf1.unlock();
         message_comming=true;
     }
 

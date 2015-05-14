@@ -24,7 +24,6 @@ import org.cesl.sensordb.exception.DBException;
 public class Main {
     public static String sensordb_ip = "122.144.166.103";
     public static int sensordb_port = 6677;
-
     public static String new_table_prefix = "new_table_";
 
     static int max=10;
@@ -32,13 +31,9 @@ public class Main {
     static int port=6379;
     public static RedisConnectPool mypool;
 
-    // get a logger instance named "com.foo"
-//    static Logger logger = Logger.getLogger(Main.class.getName());
+
     public static Logger logger = Logger.getLogger(Main.class);
-    // Now set its level. Normally you do not need to set the
-    // level of a logger programmatically. This is usually done
-    // in configuration files.
-//    logger.setLevel(Level.INFO);
+
 
     public static void main(String[] args) throws DBException {
 //        BasicClient client = new BasicClient();
@@ -54,16 +49,16 @@ public class Main {
         tables = sensordb.tables();
         System.out.println("tables: " + tables);
 //
-        put_from_redis();
+//        put_from_redis();
 
-//        for(int i=0; i<1; ++i)
-//            put_performance(180000);
+        for(int i=0; i<10; ++i)
+            put_performance(1000);
 
 
         Connection conn = new Connection(sensordb_ip, sensordb_port);
         conn.connect();
         ResultSet result_set = conn.get(new_table_prefix + "1",
-                            "2015-05-13 01:00:00", "2015-05-14 23:00:00");
+                            "2015-05-14 05:55:00", "2015-05-14 23:00:00");
         System.out.println("result_set: " + result_set + " size:"
                 + result_set.getSize() + " errorcode:" +
                 result_set.getErrCode());
@@ -84,74 +79,34 @@ public class Main {
         List<String> list_in = new ArrayList<>();
         Connection conn = new Connection(sensordb_ip, sensordb_port);
 
-        long starttime = 0;
-        long duration = 0;
-        long endtime = 0;
-        List<Long> timelist = new ArrayList<>();
-        int cnt = 0;
-
         try {
             conn.connect();
-//            status = conn.put(table_name, item.sensorID, item.timestamp,
-//                    item.x, item.y, item.z, item.values);
-//            System.out.println("table: " + table_test_name + " -put status: "
-//                    + status);
-
-//            SensordbSub myssb=new SensordbSub(addr, port);
-//            while(myssb.listen()){
-//                list_in = myssb.getRead();
-
-            List<SensordbItem> items = getItems(num);
-//                while(!list_in.isEmpty()) {
+            List<SensordbItem> items = SensordbItems(num);
             long starttimewhole = System.currentTimeMillis();
 
-//            for(int i=0; i<items.size(); ++i){
-//                    SensordbItem item = items.get(i);
             for(SensordbItem item : items){
-//                    System.out.println("item : " + item);
-                    //                put_sensordb(str_in);
-
-//                    SensordbItem item = new SensordbItem(str_in);
-                    starttime = System.currentTimeMillis();
-                    conn.put(new_table_prefix + "1", item.sensorID,
+                conn.put(new_table_prefix + "1", item.sensorID,
                             item.timestamp,
                             item.x, item.y, item.z, item.values);
-//                    endtime = System.currentTimeMillis();
-//                    System.out.println("starttime: " + starttime);
-//                    System.out.println("endtime: " + endtime);
-//                    duration = endtime - starttime;
-//                    logger.info("1 put duration: " + duration);
-
-//                    timelist.add(duration);
-//                    ++cnt;
                 }
             long endtimewhole = System.currentTimeMillis();
-
-            long durationwhole = endtimewhole - starttimewhole;
-            logger.info(num + " item in 1 conn: " + durationwhole + " ms");
-//            System.out.println("durationwhole: " + durationwhole);
-
-//                list_in.clear();
-//                if(cnt>=10)
-//                    break;
-//            }
+            logger.info(num + " item in 1 conn: "
+                    + (endtimewhole - starttimewhole) + " ms");
         } catch (DBException e) {
             e.printStackTrace();
             System.exit(-1);
         } finally {
-//            conn.dropTable(table_test_name);
 //            ResultSet result_set = conn.get(new_table_prefix + "1",
 //                    "2015-05-13 01:00:00", "2015-05-14 23:00:00");
 //            System.out.println("result_set: " + result_set + " size:"
 //                    + result_set.getSize() + " errorcode:" +
 //                    result_set.getErrCode());
-//            System.out.println("timelist: " + timelist);
-//            System.out.println("finally");
+            System.out.println("put_performance finally");
             conn.close();
         }
     }
 
-    public static List<SensordbItem> getItems(int num) {
+    public static List<SensordbItem> SensordbItems(int num) {
 //        Map<String, ByteBuffer> values = new HashMap();
         double[] spacexyz = {1.2, 2.3, 3.4};
         String sensorID = "sn";
@@ -162,7 +117,8 @@ public class Main {
             Map<String, byte[]> values = new HashMap<String, byte[]>();
             values.put("key_test1" + String.valueOf(i),
                     ("value_" + String.valueOf(i)).getBytes());
-            item.sensorID = (sensorID.concat("_d_").concat(String.valueOf(i)).getBytes());
+            item.sensorID = (sensorID.concat("_d_").concat(String.valueOf(i))
+                    .getBytes());
             item.timestamp = date.getTime();
             item.x = spacexyz[0]+i;
             item.y = spacexyz[1]+i;
@@ -175,58 +131,31 @@ public class Main {
     }
 
     public static void put_from_redis() {
-        JsonConvertor jsonconv = new JsonConvertor();
-        Map<String, byte[]> values_map = new HashMap<String, byte[]>();
         List<String> list_in = new ArrayList<>();
         Connection conn = new Connection(sensordb_ip, sensordb_port);
-
-        long starttime = 0;
-        long duration = 0;
-        long endtime = 0;
-        List<Long> timelist = new ArrayList<>();
         int cnt = 0;
         long receive_cnt = 0;
 
         try {
             conn.connect();
-//            status = conn.put(table_name, item.sensorID, item.timestamp,
-//                    item.x, item.y, item.z, item.values);
-//            System.out.println("table: " + table_test_name + " -put status: "
-//                    + status);
-
-
             SensordbSub myssb=new SensordbSub(addr, port);
             while(myssb.listen()){
                 list_in = myssb.getRead();
-//                while(!list_in.isEmpty()) {
-
                 if(list_in.size()>0) {
                     long starttimewhole = System.currentTimeMillis();
-
-//                    for (int i = 0; i < list_in.size(); ++i) {
-//                        String str_in = list_in.get(i);
                     for (String str_in : list_in){
                         System.out.println("redis str_in: " + str_in);
-                        //                put_sensordb(str_in);
-
+                        //     put_sensordb(str_in);
                         SensordbItem item = new SensordbItem(str_in);
-//                    starttime = System.currentTimeMillis();
-                        conn.put(new_table_prefix + "1", item.sensorID,
+                        conn.put(new_table_prefix + "2", item.sensorID,
                                 item.timestamp,
                                 item.x, item.y, item.z, item.values);
                         ++receive_cnt;
-//                    endtime = System.currentTimeMillis();
-//                    System.out.println("starttime: " + starttime);
-//                    System.out.println("endtime: " + endtime);
-//                    duration = endtime - starttime;
-//                    System.out.println("duration: " + duration);
-//                    timelist.add(duration);
                     }
-
                     long endtimewhole = System.currentTimeMillis();
-                    long durationwhole = endtimewhole - starttimewhole;
-                    logger.info("from redis 1 list: " + list_in.size() + " item in 1 conn: "
-                            + durationwhole + " ms");
+                    logger.info("from redis 1 list: " + list_in.size()
+                            + " item in 1 conn: "
+                            + (endtimewhole - starttimewhole) + " ms");
                     list_in.clear();
 //                ++cnt;
 //                if(cnt>=10)
@@ -238,9 +167,7 @@ public class Main {
             e.printStackTrace();
             System.exit(-1);
         } finally {
-//            conn.dropTable(table_test_name);
-//            System.out.println("timelist: " + timelist);
-            System.out.println("finally");
+            System.out.println("put_from_redis finally");
             conn.close();
         }
     }
