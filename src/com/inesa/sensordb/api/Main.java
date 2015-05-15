@@ -212,11 +212,8 @@ public class Main {
                 if(list_in.size()>0) {
                     long starttimewhole = System.currentTimeMillis();
 
-                    try {
-                        sensordb.long_put(new_table_prefix + "2", list_in);
-                    } catch (DBException e) {
-                        e.printStackTrace();
-                    }
+                    sensordb.long_put(new_table_prefix + "2", list_in);
+
 
 //                    for (String str_in : list_in){
 //                        System.out.println("redis str_in: " + str_in);

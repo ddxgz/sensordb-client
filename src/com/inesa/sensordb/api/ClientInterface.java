@@ -32,6 +32,8 @@ public interface ClientInterface {
 
     int put_records(String table_name);
 
+    int long_put(String table_name, List<String> json_str_list);
+
     int delete_record();
 
     int delete_records();

@@ -123,9 +123,8 @@ public class SensordbClient implements ClientInterface {
         return 0;
     }
 
-
-    public int long_put(String table_name, List<String> json_str_list)
-            throws DBException {
+    @Override
+    public int long_put(String table_name, List<String> json_str_list) {
 //        Map<String, byte[]> values_map = new HashMap<String, byte[]>();
 //        JsonConvertor jsonconv = new JsonConvertor();
         int status = 0;
@@ -133,12 +132,17 @@ public class SensordbClient implements ClientInterface {
         this.used.set(1);
 
         if (connected.intValue() == 0) {
-            this.conn.connect();
-            this.connected.set(1);
-//            this.used.set(1);
-            connected_num.addAndGet(1);
-            logger.info("long put connect(), set used to 1, " +
-                    "connected_num-closed_num: "+connected_num+"-"+closed_num);
+            try {
+                this.conn.connect();
+                this.connected.set(1);
+    //            this.used.set(1);
+                connected_num.addAndGet(1);
+                logger.info("long put connect(), set used to 1, " +
+                        "connected_num-closed_num: " + connected_num + "-"
+                        + closed_num);
+            } catch (DBException e) {
+                e.printStackTrace();
+            }
         }
 //        this.conn.connect();
 
