@@ -1,14 +1,13 @@
 package com.inesa.sensordb.api;
 
-import java.io.BufferedReader;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
-import java.io.IOException;
+import java.io.*;
 import java.nio.ByteBuffer;
 import java.util.*;
+import java.util.concurrent.atomic.AtomicInteger;
 
 import com.google.gson.Gson;
 
+import org.apache.log4j.Logger;
 import org.cesl.sensordb.client.Connection;
 import org.cesl.sensordb.client.ResultSet;
 //import org.cesl.sensordb.core.ResultSet;
@@ -20,8 +19,10 @@ import org.cesl.sensordb.exception.DBException;
 public class SensordbClient implements ClientInterface {
     //    private String sensordb_ip;
 //    private int sensordb_port;
-    private Connection conn;
+    public Connection conn;
     private List<String> table_list;
+
+    public static Logger logger = Logger.getLogger(SensordbClient.class);
 
 
     SensordbClient(Connection conn) {
@@ -38,6 +39,13 @@ public class SensordbClient implements ClientInterface {
 
     }
 
+    public void connect() throws DBException {
+        this.conn.connect();
+    }
+
+    public void close() throws DBException {
+        this.conn.close();
+    }
 //    @Override
 //    public void close() throws Exception{
 //        System.out.println("close()...");
@@ -114,6 +122,73 @@ public class SensordbClient implements ClientInterface {
     public int delete_tables() {
         return 0;
     }
+
+
+    public int long_put(String table_name, List<String> json_str_list)
+            throws DBException {
+//        Map<String, byte[]> values_map = new HashMap<String, byte[]>();
+//        JsonConvertor jsonconv = new JsonConvertor();
+        int status = 0;
+//        SensordbItem item = new SensordbItem(json_value);
+        this.used.set(1);
+
+        if (connected.intValue() == 0) {
+            this.conn.connect();
+            this.connected.set(1);
+//            this.used.set(1);
+            connected_num.addAndGet(1);
+            logger.info("long put connect(), set used to 1, " +
+                    "connected_num-closed_num: "+connected_num+"-"+closed_num);
+        }
+//        this.conn.connect();
+
+        for (String str_in : json_str_list){
+            System.out.println("redis str_in: " + str_in);
+            //     put_sensordb(str_in);
+            SensordbItem item = new SensordbItem(str_in);
+            conn.put(table_name, item.sensorID,
+                    item.timestamp,
+                    item.x, item.y, item.z, item.values);
+//            ++receive_cnt;
+        }
+        this.used.set(0);
+        logger.info("long put set used to 0");
+        return status;
+    }
+
+
+    public int long_put_items(String table_name, List<SensordbItem> item_list)
+            throws DBException {
+//        Map<String, byte[]> values_map = new HashMap<String, byte[]>();
+//        JsonConvertor jsonconv = new JsonConvertor();
+        int status = 0;
+//        SensordbItem item = new SensordbItem(json_value);
+        this.used.set(1);
+
+        if (connected.intValue() == 0) {
+            this.conn.connect();
+            this.connected.set(1);
+//            this.used.set(1);
+            connected_num.addAndGet(1);
+            logger.info("long put connect(), set used to 1, " +
+                    "connected_num-closed_num: "+connected_num+"-"+closed_num);
+        }
+//        this.conn.connect();
+
+        for (SensordbItem item : item_list){
+//            System.out.println("redis str_in: " + str_in);
+            //     put_sensordb(str_in);
+//            SensordbItem item = new SensordbItem(str_in);
+            conn.put(table_name, item.sensorID,
+                    item.timestamp,
+                    item.x, item.y, item.z, item.values);
+//            ++receive_cnt;
+        }
+//        this.used.set(0);
+//        logger.info("long put set used to 0");
+        return status;
+    }
+
 
     @Override
     public int put_record(String table_name, String json_value) {
@@ -244,5 +319,79 @@ public class SensordbClient implements ClientInterface {
     @Override
     public String get_records() {
         return null;
+    }
+
+
+    private AtomicInteger connected = new AtomicInteger(0);
+    private AtomicInteger used = new AtomicInteger(0);
+    private AtomicInteger connected_num = new AtomicInteger(0);
+    private AtomicInteger closed_num = new AtomicInteger(0);
+    private InputStream inStream;
+    private OutputStream outStream;
+    private Process process;
+    private boolean abortCondition = false;
+    private int watchDogTSleepTime = 10000; //3 sek
+    private int timer = 0;
+    public void startWatchDog(final Connection conn) {
+        Runnable r = new Runnable() {
+
+            @Override
+            public void run() {
+                while(!abortCondition){
+                    try {
+
+                        Thread.sleep(watchDogTSleepTime);
+                        if (connected.intValue() == 0) {
+                            conn.connect();
+                            connected.set(1);
+                            connected_num.addAndGet(1);
+                            logger.info("watchdog connect(), "+ "connected_num" +
+                                    "-closed_num: "+connected_num+"-"+closed_num);
+                        }
+                        if (used.intValue() == 1) {
+                            used.set(0);
+                            Thread.sleep(watchDogTSleepTime);
+//                            ++timer;
+//                            logger.info("timer: "+timer);
+
+                            if (used.intValue() == 0 & connected.intValue() == 1) {
+                                connected.set(0);
+                                conn.close();
+                                closed_num.addAndGet(1);
+                                logger.info("watchdog close(), " +
+                                        "connected_num-closed_num: " + connected_num
+                                        + "-" + closed_num);
+                            }
+                        }
+//                        Thread.sleep(watchDogTSleepTime);
+//                        if (timer>5) {
+//                            if (used.intValue() == 0 & connected.intValue() == 1) {
+//                                connected.set(0);
+//                                conn.close();
+//                                closed_num.addAndGet(1);
+//                                logger.info("watchdog close(), timer > 10 " +
+//                                        "connected_num-closed_num: " + connected_num
+//                                        + "-" + closed_num);
+//                                timer = 0;
+//                            }
+//
+//                        }
+
+
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    } catch (DBException e) {
+                        e.printStackTrace();
+                    }
+
+                    //if you want, you might try to kill the process
+//                    process.destroy();
+                }
+            }
+        };
+
+        Thread watchDog = new Thread(r);
+        watchDog.start();
+        //watchDog.setDaemon(true); //maybe
     }
 }

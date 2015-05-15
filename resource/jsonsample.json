@@ -6,9 +6,9 @@
   "z": 3.3,
 
   "values": {
-    "ts": 110,
+    "tsa": 110,
 //    "word_separators": "./\\()\"'-:,.;<>~!@#$%^&*|+=[]{}`~?",
-    "x": false,
-    "id": "id123"
+    "xyz": false,
+    "ids": "id123"
   }
 }
