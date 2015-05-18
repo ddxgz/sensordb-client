@@ -350,7 +350,7 @@ public class SensordbClient implements ClientInterface {
                             conn.connect();
                             connected.set(1);
                             connected_num.addAndGet(1);
-                            logger.info("watchdog connect(), " + "connected_num" +
+                            logger.info("conn_manager connect(), " + "connected_num" +
                                     "-closed_num: " + connected_num + "-" + closed_num);
                             timer = 0;
                         }
@@ -368,7 +368,7 @@ public class SensordbClient implements ClientInterface {
                                 connected.set(0);
                                 conn.close();
                                 closed_num.addAndGet(1);
-                                logger.info("watchdog close(), " +
+                                logger.info("conn_manager close(), " +
                                         "connected_num-closed_num: " + connected_num
                                         + "-" + closed_num);
                                 timer = 0;
@@ -380,7 +380,7 @@ public class SensordbClient implements ClientInterface {
                                 connected.set(0);
                                 conn.close();
                                 closed_num.addAndGet(1);
-                                logger.info("watchdog close(), " + 10*watchDogTSleepTime +
+                                logger.info("conn_manager close(), " + no_use_timer*watchDogTSleepTime +
                                         "ms no action from start, connected_num-closed_num: " + connected_num
                                         + "-" + closed_num);
                             }
