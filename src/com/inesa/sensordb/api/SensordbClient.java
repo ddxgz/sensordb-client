@@ -335,10 +335,11 @@ public class SensordbClient implements ClientInterface {
     private Process process;
     private boolean abortCondition = false;
     private int watchDogTSleepTime = 10000; //3 sek
-    private int timer = 0;
-    public void startWatchDog(final Connection conn) {
+    private int no_use_timer = 10;
+    public void start_conn_manager(final Connection conn) {
         Runnable r = new Runnable() {
-
+            int timer = 0;
+            boolean no_use = true;
             @Override
             public void run() {
                 while(!abortCondition){
@@ -349,11 +350,16 @@ public class SensordbClient implements ClientInterface {
                             conn.connect();
                             connected.set(1);
                             connected_num.addAndGet(1);
-                            logger.info("watchdog connect(), "+ "connected_num" +
-                                    "-closed_num: "+connected_num+"-"+closed_num);
+                            logger.info("watchdog connect(), " + "connected_num" +
+                                    "-closed_num: " + connected_num + "-" + closed_num);
+                            timer = 0;
                         }
+                        ++timer;
+
                         if (used.intValue() == 1) {
                             used.set(0);
+                            if (no_use == true)
+                                no_use = false;
                             Thread.sleep(watchDogTSleepTime);
 //                            ++timer;
 //                            logger.info("timer: "+timer);
@@ -365,7 +371,20 @@ public class SensordbClient implements ClientInterface {
                                 logger.info("watchdog close(), " +
                                         "connected_num-closed_num: " + connected_num
                                         + "-" + closed_num);
+                                timer = 0;
                             }
+                        }
+
+                        if (no_use == true & timer > no_use_timer) {
+                            if (used.intValue() == 0 & connected.intValue() == 1) {
+                                connected.set(0);
+                                conn.close();
+                                closed_num.addAndGet(1);
+                                logger.info("watchdog close(), " + 10*watchDogTSleepTime +
+                                        "ms no action from start, connected_num-closed_num: " + connected_num
+                                        + "-" + closed_num);
+                            }
+                            timer = 0;
                         }
 //                        Thread.sleep(watchDogTSleepTime);
 //                        if (timer>5) {

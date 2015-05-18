@@ -54,19 +54,20 @@ public class Main {
 //        System.out.println("tables: " + tables);
 //
 //        put_from_redis(conn);
+        put_from_redis_foreverconn(conn, new_table_prefix + "3");
 
 //        for(int i=0; i<10; ++i)
-            put_performance(conn, 100);
+//            put_performance(conn, new_table_prefix + "2", 100);
 
 //        test_interface();
 
-//        conn.connect();
-//        ResultSet result_set = conn.get(new_table_prefix + "2",
-//                            "2015-05-15 01:00:00", "2015-05-16 23:00:00");
-//        System.out.println("result_set: " + result_set + " size:"
-//                + result_set.getSize() + " errorcode:" +
-//                result_set.getErrCode());
-//        conn.close();
+        conn.connect();
+        ResultSet result_set = conn.get(new_table_prefix + "2",
+                            "2015-05-15 01:00:00", "2015-05-19 23:00:00");
+        System.out.println("result_set: " + result_set + " size:"
+                + result_set.getSize() + " errorcode:" +
+                result_set.getErrCode());
+        conn.close();
 
 
 //        test_conn_duration();
@@ -122,13 +123,15 @@ public class Main {
     }
 
 
-    public static void put_performance(Connection conn, int num) throws InterruptedException {
+    public static void put_performance(Connection conn, String tablename,
+                                       int num)
+            throws InterruptedException {
         JsonConvertor jsonconv = new JsonConvertor();
         Map<String, byte[]> values_map = new HashMap<>();
         List<String> list_in = new ArrayList<>();
 //        Connection conn = new Connection(sensordb_ip, sensordb_port);
         SensordbClient sensordb = new SensordbClient(conn);
-        sensordb.startWatchDog(sensordb.conn);
+        sensordb.start_conn_manager(sensordb.conn);
 
         while(true) {
             Random rand1 = new Random();
@@ -143,7 +146,7 @@ public class Main {
 //            sensordb.long_put(new_table_prefix + "2", list_in);
 
                 try {
-                    sensordb.long_put_items(new_table_prefix + "2", items);
+                    sensordb.long_put_items(tablename, items);
                 } catch (DBException e) {
                     e.printStackTrace();
                 }
@@ -169,6 +172,7 @@ public class Main {
         }
     }
 
+
     public static List<SensordbItem> get_sensordb_items(int num) {
 //        Map<String, ByteBuffer> values = new HashMap();
         double[] spacexyz = {1.2, 2.3, 3.4};
@@ -193,7 +197,8 @@ public class Main {
         return items;
     }
 
-    public static void put_from_redis(Connection conn)
+
+    public static void put_from_redis(Connection conn, String tablename)
             throws InterruptedException, DBException {
         List<String> list_in = new ArrayList<>();
 //        Connection conn = new Connection(sensordb_ip, sensordb_port);
@@ -204,15 +209,15 @@ public class Main {
         try {
 //            conn.connect();
 //            sensordb.connect();
-            sensordb.startWatchDog(sensordb.conn);
+            sensordb.start_conn_manager(sensordb.conn);
             SensordbSub myssb=new SensordbSub(addr, port);
             while(myssb.listen()){
-                Thread.sleep(500);
+//                Thread.sleep(500);
                 list_in = myssb.getRead();
                 if(list_in.size()>0) {
                     long starttimewhole = System.currentTimeMillis();
 
-                    sensordb.long_put(new_table_prefix + "2", list_in);
+                    sensordb.long_put(tablename, list_in);
 
 
 //                    for (String str_in : list_in){
@@ -245,6 +250,53 @@ public class Main {
 //            sensordb.close();
         }
     }
+
+
+    public static void put_from_redis_foreverconn (Connection conn,
+                                                   String tablename)
+            throws InterruptedException, DBException {
+
+        List<String> list_in = new ArrayList<>();
+        SensordbClient sensordb = new SensordbClient(conn);
+        long receive_cnt = 0;
+
+        try {
+            conn.connect();
+            sensordb.start_conn_manager(sensordb.conn);
+            SensordbSub myssb=new SensordbSub(addr, port);
+            while(myssb.listen()){
+//                Thread.sleep(500);
+                list_in = myssb.getRead();
+                if(list_in.size()>0) {
+                    long starttimewhole = System.currentTimeMillis();
+
+                    for (String str_in : list_in){
+                        System.out.println("redis str_in: " + str_in);
+                        //     put_sensordb(str_in);
+                        SensordbItem item = new SensordbItem(str_in);
+                        conn.put(tablename, item.sensorID,
+                                item.timestamp,
+                                item.x, item.y, item.z, item.values);
+                        ++receive_cnt;
+                    }
+
+                    long endtimewhole = System.currentTimeMillis();
+                    logger.info("from redis 1 list: " + list_in.size()
+                            + " item in 1 conn: "
+                            + (endtimewhole - starttimewhole) + " ms");
+                    list_in.clear();
+//                ++cnt;
+//                if(cnt>=10)
+//                    break;
+                }
+                logger.info("from redis all:" + receive_cnt);
+            }
+        } finally {
+            System.out.println("put_from_redis_foreverconn finally");
+            conn.close();
+        }
+    }
+
 
     public static void put_sensordb(String str_in) {
         SensordbClient sensordb = new SensordbClient(sensordb_ip, sensordb_port);
