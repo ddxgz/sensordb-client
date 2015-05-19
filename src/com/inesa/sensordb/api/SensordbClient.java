@@ -130,6 +130,8 @@ public class SensordbClient implements ClientInterface {
         int status = 0;
 //        SensordbItem item = new SensordbItem(json_value);
         this.used.set(1);
+        logger.info("long put set used to 1, " +
+                "connected_num-closed_num: "+connected_num+"-"+closed_num);
 
         if (connected.intValue() == 0) {
             try {
@@ -147,7 +149,7 @@ public class SensordbClient implements ClientInterface {
 //        this.conn.connect();
 
         for (String str_in : json_str_list){
-            System.out.println("redis str_in: " + str_in);
+//            System.out.println("redis str_in: " + str_in);
             //     put_sensordb(str_in);
             SensordbItem item = new SensordbItem(str_in);
             conn.put(table_name, item.sensorID,
@@ -155,8 +157,8 @@ public class SensordbClient implements ClientInterface {
                     item.x, item.y, item.z, item.values);
 //            ++receive_cnt;
         }
-        this.used.set(0);
-        logger.info("long put set used to 0");
+//        this.used.set(0);
+//        logger.info("long put set used to 0");
         return status;
     }
 
@@ -168,6 +170,8 @@ public class SensordbClient implements ClientInterface {
         int status = 0;
 //        SensordbItem item = new SensordbItem(json_value);
         this.used.set(1);
+        logger.info("long put set used to 1, " +
+                "connected_num-closed_num: "+connected_num+"-"+closed_num);
 
         if (connected.intValue() == 0) {
             this.conn.connect();

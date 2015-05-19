@@ -53,21 +53,21 @@ public class Main {
 //        tables = sensordb.tables();
 //        System.out.println("tables: " + tables);
 //
-//        put_from_redis(conn);
-        put_from_redis_foreverconn(conn, new_table_prefix + "3");
+        put_from_redis(conn, new_table_prefix + "3");
+//        put_from_redis_foreverconn(conn, new_table_prefix + "3");
 
 //        for(int i=0; i<10; ++i)
 //            put_performance(conn, new_table_prefix + "2", 100);
 
 //        test_interface();
 
-        conn.connect();
-        ResultSet result_set = conn.get(new_table_prefix + "2",
-                            "2015-05-15 01:00:00", "2015-05-19 23:00:00");
-        System.out.println("result_set: " + result_set + " size:"
-                + result_set.getSize() + " errorcode:" +
-                result_set.getErrCode());
-        conn.close();
+//        conn.connect();
+//        ResultSet result_set = conn.get(new_table_prefix + "2",
+//                            "2015-05-15 01:00:00", "2015-05-19 23:00:00");
+//        System.out.println("result_set: " + result_set + " size:"
+//                + result_set.getSize() + " errorcode:" +
+//                result_set.getErrCode());
+//        conn.close();
 
 
 //        test_conn_duration();
@@ -239,7 +239,7 @@ public class Main {
 //                if(cnt>=10)
 //                    break;
                 }
-                logger.info("from redis all:" + receive_cnt);
+//                logger.info("from redis all:" + receive_cnt);
             }
 //        } catch (DBException e) {
 //            e.printStackTrace();
@@ -262,7 +262,7 @@ public class Main {
 
         try {
             conn.connect();
-            sensordb.start_conn_manager(sensordb.conn);
+//            sensordb.start_conn_manager(sensordb.conn);
             SensordbSub myssb=new SensordbSub(addr, port);
             while(myssb.listen()){
 //                Thread.sleep(500);
@@ -271,13 +271,13 @@ public class Main {
                     long starttimewhole = System.currentTimeMillis();
 
                     for (String str_in : list_in){
-                        System.out.println("redis str_in: " + str_in);
+//                        System.out.println("redis str_in: " + str_in);
                         //     put_sensordb(str_in);
                         SensordbItem item = new SensordbItem(str_in);
                         conn.put(tablename, item.sensorID,
                                 item.timestamp,
                                 item.x, item.y, item.z, item.values);
-                        ++receive_cnt;
+//                        ++receive_cnt;
                     }
 
                     long endtimewhole = System.currentTimeMillis();
@@ -289,7 +289,7 @@ public class Main {
 //                if(cnt>=10)
 //                    break;
                 }
-                logger.info("from redis all:" + receive_cnt);
+//                logger.info("from redis all:" + receive_cnt);
             }
         } finally {
             System.out.println("put_from_redis_foreverconn finally");

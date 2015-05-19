@@ -1,6 +1,7 @@
 
 # for IdeaIntellij
 .idea/
+misc.xml
 
 *.class
 
