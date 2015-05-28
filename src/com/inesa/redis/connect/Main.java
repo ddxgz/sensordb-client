@@ -2,7 +2,7 @@ package com.inesa.redis.connect;
 
 public class Main {
     static String addr="10.200.46.245";
-    static int port=6379;
+    static int port=7000;
 
     public static void main(String[] args) {
 	// write your code her

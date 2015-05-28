@@ -6,7 +6,7 @@
   "z": 3.3,
 
   "values": {
-    "status": 110,
+    "swift_url": "hh",
     "word_separators": "./\\()\"'-:,.;<>~!@#$%^&*|+=[]{}`~?",
     "xyz": false,
     "ids": "id123"

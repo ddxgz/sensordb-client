@@ -167,16 +167,18 @@ public class SensordbClient implements ClientInterface {
 //        JsonConvertor jsonconv = new JsonConvertor();
         int status = 0;
 //        SensordbItem item = new SensordbItem(json_value);
-        this.used.set(1);
 
-        if (connected.intValue() == 0) {
-            this.conn.connect();
-            this.connected.set(1);
-//            this.used.set(1);
-            connected_num.addAndGet(1);
-            logger.info("long put connect(), set used to 1, " +
-                    "connected_num-closed_num: "+connected_num+"-"+closed_num);
-        }
+//        this.used.set(1);
+//
+//        if (connected.intValue() == 0) {
+//            this.conn.connect();
+//            this.connected.set(1);
+////            this.used.set(1);
+//            connected_num.addAndGet(1);
+//            logger.info("long put connect(), set used to 1, " +
+//                    "connected_num-closed_num: "+connected_num+"-"+closed_num);
+//        }
+
 //        this.conn.connect();
 
         for (SensordbItem item : item_list){
@@ -262,14 +264,7 @@ public class SensordbClient implements ClientInterface {
     }
 
 
-    class ResultItem {
-        String id;
-        long ts;
-        double x;
-        double y;
-        double z;
-        Map<String, String> values = new HashMap<>();
-    }
+
 
     @Override
     public List<String> get_json_record(String table_name, String sensorID,
