@@ -50,38 +50,50 @@ public class Main {
 //        put_from_redis(conn);
 //        put_from_redis_foreverconn(conn, new_table_prefix + "4");
 
-        int[] nums = {1000, 5000, 10000/*, 50000, 100000, 200000, 300000*/};
-//        for(int num:nums) {
+        int[] nums = {10000, 10000/*, 5000, 10000, 50000, 100000, 200000, 300000*/};
+        for(int num:nums) {
 //            logger.info("num: " + num);
-//            for (int i = 0; i < 3; ++i) {
-//                put_performance(conn, new_table_prefix + "8", num);
-//            }
-//        }
+            for (int i = 0; i < 1; ++i) {
+//                put_performance(conn, new_table_prefix + "1", num);
+            }
+        }
 
 //        test_interface();
 
-//        get_performance(conn, new_table_prefix + "7",
-//                "2015-05-14 23:55:00", "2015-05-22 08:00:00");
+        get_performance(conn, new_table_prefix + "4",
+                "2015-05-29 17:11:00", "2015-05-29 17:55:00");
 
 
-        conn.connect();
-//        logger.debug("drop");
-//        conn.dropTable(new_table_prefix + "1");
-//        logger.debug("create");
+
+//        conn.connect();
+////        logger.debug("drop");
+////        conn.dropTable(new_table_prefix + "1");
+////        logger.debug("create");
+////
+////        conn.createTable(new_table_prefix + "1");
+////        List<String> tables = new ArrayList<>();
+////        tables = sensordb.tables();
+////        System.out.println("tables: " + tables);
+////
+//        logger.debug("get");
 //
-//        conn.createTable(new_table_prefix + "1");
-//        List<String> tables = new ArrayList<>();
-//        tables = sensordb.tables();
-//        System.out.println("tables: " + tables);
-//
-        logger.debug("get");
+//        ResultSet result_set = conn.get(new_table_prefix + "1",
+//                "2015-05-29 10:00:00", "2015-05-29 18:00:00");
+//        System.out.println("result_set: " + result_set + " size:"
+//                + result_set.getSize() + " errorcode:" +
+//                result_set.getErrCode());
+//        conn.close();
 
-        ResultSet result_set = conn.get(new_table_prefix + "7",
-                "2015-05-10 01:00:00", "2015-05-23 8:00:00");
-        System.out.println("result_set: " + result_set + " size:"
-                + result_set.getSize() + " errorcode:" +
-                result_set.getErrCode());
-        conn.close();
+//        List < String > valuekeys = new ArrayList<>();
+//        valuekeys.add("admin");
+//        valuekeys.add("state");
+//        valuekeys.add("type");
+//        valuekeys.add("name");
+//        List<String> result_json = sensordb.get_json_record(
+//                new_table_prefix + "1",
+////                "10.200.45.148",
+//                "2015-05-10 01:00:00", "2015-06-29 18:00:00",
+//                valuekeys);
 
 
 //        test_conn_duration();
@@ -165,28 +177,28 @@ public class Main {
                         + result_set.getSize() + " errorcode:" +
                         result_set.getErrCode());
 //
-                starttimewhole = System.currentTimeMillis();
-                    while (result_set.next()) {
-                        result_set.getString("id");
-                        item.id = result_set.getString("id");
-                        item.ts = result_set.getLong("ts");
-                        item.x = result_set.getDouble("x");
-                        item.y = result_set.getDouble("y");
-                        item.z = result_set.getDouble("z");
-//                String tst = result_set.getString("word_separators");
-//                        for (int i=0; i<valuekeys.size(); ++i){
-//                            item.values.put(valuekeys.get(i),
-//                                    result_set.getString(valuekeys.get(i)));
-//                        }
-//                        System.out.println("item- id:" + item.id + " - ts:" + item.ts/*+
-//                        " tst:"+tst+" x:"+item.x+" y:"+item.y+" z:"+item.z*/
-//                                +"values: "+item.values);
-//                        jsonstr = gson.toJson(item);
-//                        json_list.add(jsonstr);
-                    }
-                endtimewhole = System.currentTimeMillis();
-                logger.info("get " + result_set.getSize() + " items in 1 conn: "
-                        + (endtimewhole - starttimewhole) + " ms");
+//                starttimewhole = System.currentTimeMillis();
+//                    while (result_set.next()) {
+//                        result_set.getString("id");
+//                        item.id = result_set.getString("id");
+//                        item.ts = result_set.getLong("ts");
+//                        item.x = result_set.getDouble("x");
+//                        item.y = result_set.getDouble("y");
+//                        item.z = result_set.getDouble("z");
+////                String tst = result_set.getString("word_separators");
+////                        for (int i=0; i<valuekeys.size(); ++i){
+////                            item.values.put(valuekeys.get(i),
+////                                    result_set.getString(valuekeys.get(i)));
+////                        }
+////                        System.out.println("item- id:" + item.id + " - ts:" + item.ts/*+
+////                        " tst:"+tst+" x:"+item.x+" y:"+item.y+" z:"+item.z*/
+////                                +"values: "+item.values);
+////                        jsonstr = gson.toJson(item);
+////                        json_list.add(jsonstr);
+//                    }
+//                endtimewhole = System.currentTimeMillis();
+//                logger.info("scan " + result_set.getSize() + " items in 1 conn: "
+//                        + (endtimewhole - starttimewhole) + " ms");
             }
         } catch (DBException e) {
             e.printStackTrace();
@@ -268,7 +280,7 @@ public class Main {
             Map<String, byte[]> values = new HashMap<String, byte[]>();
             values.put("key_test1" + String.valueOf(i),
                     ("value_" + String.valueOf(i)).getBytes());
-            item.sensorID = (sensorID.concat("_d_").concat(String.valueOf(i))
+            item.sensorID = (sensorID.concat("_e_").concat(String.valueOf(i))
                     .getBytes());
             item.timestamp = date.getTime();
             item.x = spacexyz[0] + i;
@@ -434,4 +446,14 @@ public class Main {
 
     }
 
+    public void get_env(){
+        final Properties p = System.getProperties();
+        final Enumeration e = p.keys();
+        while (e.hasMoreElements())
+        {
+            final String prt = (String) e.nextElement();
+            final String prtvalue = System.getProperty(prt);
+            System.out.println(prt + ":" + prtvalue);
+        }
+    }
 }

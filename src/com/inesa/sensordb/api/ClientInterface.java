@@ -43,5 +43,9 @@ public interface ClientInterface {
                            String starttime, String endtime,
                            List<String> valuekeys);
 
+    List<String> get_json_record(String table_name,
+                                 String starttime, String endtime,
+                                 List<String> valuekeys);
+
     String get_records();
 }

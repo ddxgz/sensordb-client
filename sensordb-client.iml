@@ -17,5 +17,7 @@
     <orderEntry type="library" name="ext" level="project" />
     <orderEntry type="library" name="sensordb (2)" level="project" />
     <orderEntry type="library" name="libs (3)" level="project" />
+    <orderEntry type="library" name="sensordb" level="project" />
+    <orderEntry type="library" name="cglib-2.1.96" level="project" />
   </component>
 </module>

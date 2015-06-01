@@ -296,9 +296,10 @@ public class SensordbClient implements ClientInterface {
                     item.values.put(valuekeys.get(i),
                             result_set.getString(valuekeys.get(i)));
                 }
-                System.out.println("item- id:" + item.id + " - ts:" + item.ts/*+
+                System.out.println("item - sensorID:" + item.id + " timestamp:"
+                        + item.ts/*+
                         " tst:"+tst+" x:"+item.x+" y:"+item.y+" z:"+item.z*/
-                        +"values: "+item.values);
+                        +" values: "+item.values);
                 jsonstr = gson.toJson(item);
                 json_list.add(jsonstr);
             }
@@ -307,7 +308,61 @@ public class SensordbClient implements ClientInterface {
             e.printStackTrace();
             System.exit(-1);
         } finally {
-            System.out.println("get_record finally");
+            System.out.println("get_json_record finally");
+            conn.close();
+        }
+
+        return json_list;
+    }
+
+
+    @Override
+    public List<String> get_json_record(String table_name,
+                                        String starttime, String endtime,
+                                        List<String> valuekeys) {
+        String jsonstr = " ";
+        List<String> json_list = new ArrayList<>();
+        Gson gson = new Gson();
+//        SensordbItem item = new SensordbItem();
+        ResultItem item = new ResultItem();
+//        ResultSet result_set = new ResultSet();
+        try {
+            this.conn.connect();
+            ResultSet result_set = this.conn.get(table_name,
+                    starttime, endtime);
+            System.out.println("result_set: " + result_set + " size:"
+                    + result_set.getSize() + " errorcode:" +
+                    result_set.getErrCode());
+
+            long starttimewhole = System.currentTimeMillis();
+            while (result_set.next()) {
+                result_set.getString("id");
+                item.id = result_set.getString("id");
+                item.ts = result_set.getLong("ts");
+                item.x = result_set.getDouble("x");
+                item.y = result_set.getDouble("y");
+                item.z = result_set.getDouble("z");
+//                String tst = result_set.getString("word_separators");
+                for (int i=0; i<valuekeys.size(); ++i){
+                    item.values.put(valuekeys.get(i),
+                            result_set.getString(valuekeys.get(i)));
+                }
+//                System.out.println("item - sensorID:" + item.id + " timestamp:"
+//                        + item.ts/*+
+//                        " tst:"+tst+" x:"+item.x+" y:"+item.y+" z:"+item.z*/
+//                        +" values: "+item.values);
+//                jsonstr = gson.toJson(item);
+//                json_list.add(jsonstr);
+            }
+            long endtimewhole = System.currentTimeMillis();
+            logger.info("scan " + result_set.getSize() + " items in 1 conn: "
+                    + (endtimewhole - starttimewhole) + " ms");
+
+        } catch (DBException e) {
+            e.printStackTrace();
+            System.exit(-1);
+        } finally {
+            System.out.println("get_json_record finally");
             conn.close();
         }
 
