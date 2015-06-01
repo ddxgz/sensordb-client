@@ -11,6 +11,8 @@ import com.google.gson.Gson;
 import com.inesa.redis.connect.RedisConnectPool;
 import com.inesa.redis.connect.SensordbSub;
 
+import com.inesa.sensordb.api.test.AvailableTest;
+import com.inesa.sensordb.api.test.ConcurrentTest;
 import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
 
@@ -25,7 +27,7 @@ import org.cesl.sensordb.exception.DBException;
 public class Main {
     public static String sensordb_ip = "122.144.166.103";
     public static int sensordb_port = 6677;
-    public static String new_table_prefix = "new_table_";
+    public static String new_table_prefix = "trivial_table_";
 
     static int max = 10;
     static String addr = "10.200.46.245";
@@ -38,9 +40,11 @@ public class Main {
 
     public static void main(String[] args) throws DBException, InterruptedException {
 
-        Connection conn = new Connection(sensordb_ip, sensordb_port);
+//        Connection conn = new Connection(sensordb_ip, sensordb_port);
 //        conn.connect();
-        SensordbClient sensordb = new SensordbClient(sensordb_ip, sensordb_port);
+//        conn.dropTables("^ava_test_table_.*");
+//        conn.createTable(new_table_prefix+"1");
+//        SensordbClient sensordb = new SensordbClient(sensordb_ip, sensordb_port);
 //        SensordbClient sensordb = new SensordbClient(conn);
 //
 //        List<String> tables = new ArrayList<>();
@@ -49,6 +53,13 @@ public class Main {
 //
 //        put_from_redis(conn);
 //        put_from_redis_foreverconn(conn, new_table_prefix + "4");
+
+        ConcurrentTest test = new ConcurrentTest();
+        test.concurrent_run(2);
+//        AvailableTest test = new AvailableTest();
+//        test.run_available_test();
+
+//        multi_put(3,200000);
 
         int[] nums = {10000, 10000/*, 5000, 10000, 50000, 100000, 200000, 300000*/};
         for(int num:nums) {
@@ -60,9 +71,8 @@ public class Main {
 
 //        test_interface();
 
-        get_performance(conn, new_table_prefix + "4",
-                "2015-05-29 17:11:00", "2015-05-29 17:55:00");
-
+//        get_performance(conn, new_table_prefix + "4",
+//                "2015-05-29 17:11:00", "2015-05-29 17:55:00");
 
 
 //        conn.connect();
@@ -98,6 +108,62 @@ public class Main {
 
 //        test_conn_duration();
 
+    }
+
+
+    public static void multi_put(int num, int item_num) {
+        Connection conn = new Connection(sensordb_ip, sensordb_port);
+
+        try {
+            conn.connect();
+//            long starttime = System.currentTimeMillis();
+//            System.out.println("start time: " + starttime);
+            for (int i = 0; i < num; ++i) {
+                long starttimewhole = System.currentTimeMillis();
+
+                List<Item> items = getItems(item_num);
+//                System.out.println("items: " + items);
+                conn.batchPut(new_table_prefix + "1", items);
+//                System.out.println("batchPut status: " + status);
+
+                long endtimewhole = System.currentTimeMillis();
+                logger.info("batchPut: " + item_num +
+                        " items in 1 conn: "
+                        + (endtimewhole - starttimewhole) + " ms");
+            }
+//            pro_time[i] = System.currentTimeMillis() - starttime;
+//            System.out.println("pro_time time: " + pro_time);
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+
+            System.out.println("multi_put finally");
+            conn.close();
+        }
+    }
+
+
+    public static List<Item> getItems(int num) {
+//        Map<String, ByteBuffer> values = new HashMap();
+        Date date = new Date();
+        Item item = new Item();
+        List<Item> items = new ArrayList<Item>();
+        for (int i = 0; i < num; ++i) {
+            Map<String, ByteBuffer> values = new HashMap();
+            values.put("key_test1" + String.valueOf(i),
+                    ByteBuffer.wrap(("value_" + String.valueOf(i)).getBytes()));
+            item.sensorID = ByteBuffer.wrap("testsendor".concat("_f_")
+                    .concat(String.valueOf(i)).getBytes());
+            item.sampledts = date.getTime();
+            item.x = (item.sampledts%3+1)+i;
+            item.y = (item.sampledts%3+2)+i;
+            item.z = (item.sampledts%3+3)+i;
+            item.values = values;
+            items.add(item);
+
+        }
+
+        return items;
     }
 
     public static void test_conn_duration() throws DBException, InterruptedException {

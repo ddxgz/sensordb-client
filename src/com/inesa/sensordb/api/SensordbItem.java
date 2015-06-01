@@ -2,13 +2,12 @@ package com.inesa.sensordb.api;
 
 import java.io.FileReader;
 import java.io.IOException;
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
 
 /**
  * Created by pc on 15-5-13.
  */
-class SensordbItem {
+public class SensordbItem {
 
     public byte[] sensorID;
     public long timestamp;
@@ -22,7 +21,7 @@ class SensordbItem {
 //    private Map<String, String> values_strmap = new HashMap<String, String>();
     private Map<String, Object> values_objmap = new HashMap<String, Object>();
 
-    SensordbItem() {}
+    public SensordbItem() {}
 
     SensordbItem(String json_in) {
         set_item(json_in);
@@ -83,4 +82,6 @@ class SensordbItem {
         this.z = this.item_without_value.z;
         this.values = jsonconv.get_map(values_str);
     }
+
+
 }

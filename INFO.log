@@ -1472,3 +1472,989 @@ get 0 items in 1 conn: 5 ms [2015-06-01 11:35:16] [main:243ms]-[INFO] [Main:174]
 get 0 items in 1 conn: 6 ms [2015-06-01 11:35:16] [main:249ms]-[INFO] [Main:174][get_performance] 
 get 0 items in 1 conn: 5 ms [2015-06-01 11:35:16] [main:254ms]-[INFO] [Main:174][get_performance] 
 get 0 items in 1 conn: 6 ms [2015-06-01 11:35:16] [main:260ms]-[INFO] [Main:174][get_performance] 
+get 0 items in 1 conn: 28 ms [2015-06-01 13:15:58] [main:0ms]-[INFO] [Main:174][get_performance] 
+get 0 items in 1 conn: 7 ms [2015-06-01 13:15:58] [main:16ms]-[INFO] [Main:174][get_performance] 
+get 0 items in 1 conn: 5 ms [2015-06-01 13:15:58] [main:23ms]-[INFO] [Main:174][get_performance] 
+get 0 items in 1 conn: 6 ms [2015-06-01 13:15:58] [main:29ms]-[INFO] [Main:174][get_performance] 
+get 0 items in 1 conn: 6 ms [2015-06-01 13:15:58] [main:35ms]-[INFO] [Main:174][get_performance] 
+get 0 items in 1 conn: 5 ms [2015-06-01 13:15:58] [main:40ms]-[INFO] [Main:174][get_performance] 
+get 0 items in 1 conn: 6 ms [2015-06-01 13:15:58] [main:46ms]-[INFO] [Main:174][get_performance] 
+get 0 items in 1 conn: 5 ms [2015-06-01 13:15:58] [main:51ms]-[INFO] [Main:174][get_performance] 
+get 0 items in 1 conn: 6 ms [2015-06-01 13:15:58] [main:57ms]-[INFO] [Main:174][get_performance] 
+get 0 items in 1 conn: 5 ms [2015-06-01 13:15:58] [main:62ms]-[INFO] [Main:174][get_performance] 
+test_list_tables: 6 tables in 1 conn: 91 ms [2015-06-01 13:21:54] [main:0ms]-[INFO] [AvailableTest:64][test_list_tables] 
+test_create_table: ava_test_table_1433136114054 in 1 conn: 2148 ms [2015-06-01 13:21:56] [main:2249ms]-[INFO] [AvailableTest:84][test_create_table] 
+test_list_tables: 8 tables in 1 conn: 462 ms [2015-06-01 13:21:56] [main:2813ms]-[INFO] [AvailableTest:64][test_list_tables] 
+test_drop_table: ava_test_table_1433136114054 in 1 conn: 3973 ms [2015-06-01 13:22:01] [main:6887ms]-[INFO] [AvailableTest:103][test_drop_table] 
+test_list_tables: 6 tables in 1 conn: 24 ms [2015-06-01 13:22:01] [main:7012ms]-[INFO] [AvailableTest:64][test_list_tables] 
+test_list_tables: 6 tables in 1 conn: 2057 ms [2015-06-01 13:43:05] [main:0ms]-[INFO] [AvailableTest:77][test_list_tables] 
+test_create_table: ava_test_table_1433137382979 in 1 conn: 1051 ms [2015-06-01 13:43:06] [main:1152ms]-[INFO] [AvailableTest:97][test_create_table] 
+test_list_tables: 8 tables in 1 conn: 253 ms [2015-06-01 13:43:06] [main:1506ms]-[INFO] [AvailableTest:77][test_list_tables] 
+test_put: 0 tables in 1 conn: 6 ms [2015-06-01 13:43:06] [main:1614ms]-[INFO] [AvailableTest:143][test_put] 
+test_list_tables: 8 tables in 1 conn: 65 ms [2015-06-01 13:43:42] [main:0ms]-[INFO] [AvailableTest:77][test_list_tables] 
+test_create_table: ava_test_table_1433137422317 in 1 conn: 1857 ms [2015-06-01 13:43:44] [main:1959ms]-[INFO] [AvailableTest:97][test_create_table] 
+test_list_tables: 10 tables in 1 conn: 1049 ms [2015-06-01 13:43:45] [main:3110ms]-[INFO] [AvailableTest:77][test_list_tables] 
+test_put: 0 tables in 1 conn: 6 ms [2015-06-01 13:43:45] [main:3217ms]-[INFO] [AvailableTest:143][test_put] 
+test_get: 0 tables in 1 conn: 23 ms [2015-06-01 13:43:45] [main:3341ms]-[INFO] [AvailableTest:169][test_get] 
+test_drop_table: ava_test_table_1433137422317 in 1 conn: 2668 ms [2015-06-01 13:43:48] [main:6110ms]-[INFO] [AvailableTest:116][test_drop_table] 
+test_list_tables: 8 tables in 1 conn: 1039 ms [2015-06-01 13:43:49] [main:7249ms]-[INFO] [AvailableTest:77][test_list_tables] 
+test_list_tables: 8 tables in 1 conn: 53 ms [2015-06-01 13:45:29] [main:0ms]-[INFO] [AvailableTest:77][test_list_tables] 
+test_create_table: ava_test_table_1433137529189 in 1 conn: 3450 ms [2015-06-01 13:45:32] [main:3552ms]-[INFO] [AvailableTest:97][test_create_table] 
+test_list_tables: 10 tables in 1 conn: 49 ms [2015-06-01 13:45:32] [main:3704ms]-[INFO] [AvailableTest:77][test_list_tables] 
+test_put: 10 items in 1 conn: 6 ms [2015-06-01 13:45:33] [main:3811ms]-[INFO] [AvailableTest:143][test_put] 
+test_get: 0 items in 1 conn: 25 ms [2015-06-01 13:45:33] [main:3936ms]-[INFO] [AvailableTest:169][test_get] 
+test_drop_table: ava_test_table_1433137529189 in 1 conn: 2654 ms [2015-06-01 13:45:35] [main:6690ms]-[INFO] [AvailableTest:116][test_drop_table] 
+test_list_tables: 8 tables in 1 conn: 1450 ms [2015-06-01 13:45:37] [main:8241ms]-[INFO] [AvailableTest:77][test_list_tables] 
+test_list_tables: 8 tables in 1 conn: 56 ms [2015-06-01 13:46:13] [main:0ms]-[INFO] [AvailableTest:77][test_list_tables] 
+test_create_table: ava_test_table_1433137573285 in 1 conn: 2353 ms [2015-06-01 13:46:15] [main:2455ms]-[INFO] [AvailableTest:97][test_create_table] 
+test_list_tables: 10 tables in 1 conn: 45 ms [2015-06-01 13:46:15] [main:2602ms]-[INFO] [AvailableTest:77][test_list_tables] 
+test_put: 10 items in 1 conn: 5 ms [2015-06-01 13:46:16] [main:2710ms]-[INFO] [AvailableTest:143][test_put] 
+test_get: 0 items in 1 conn: 24 ms [2015-06-01 13:46:16] [main:2834ms]-[INFO] [AvailableTest:169][test_get] 
+test_drop_table: ava_test_table_1433137573285 in 1 conn: 2887 ms [2015-06-01 13:46:19] [main:5821ms]-[INFO] [AvailableTest:116][test_drop_table] 
+test_list_tables: 8 tables in 1 conn: 31 ms [2015-06-01 13:46:19] [main:5953ms]-[INFO] [AvailableTest:77][test_list_tables] 
+test_list_tables: 8 tables in 1 conn: 65 ms [2015-06-01 13:46:34] [main:0ms]-[INFO] [AvailableTest:77][test_list_tables] 
+test_create_table: ava_test_table_1433137594266 in 1 conn: 1346 ms [2015-06-01 13:46:35] [main:1448ms]-[INFO] [AvailableTest:97][test_create_table] 
+test_list_tables: 10 tables in 1 conn: 45 ms [2015-06-01 13:46:35] [main:1595ms]-[INFO] [AvailableTest:77][test_list_tables] 
+test_put: 10 items in 1 conn: 6 ms [2015-06-01 13:46:36] [main:1702ms]-[INFO] [AvailableTest:143][test_put] 
+test_get: 0 items in 1 conn: 27 ms [2015-06-01 13:46:38] [main:3730ms]-[INFO] [AvailableTest:169][test_get] 
+test_drop_table: ava_test_table_1433137594266 in 1 conn: 2887 ms [2015-06-01 13:46:41] [main:6717ms]-[INFO] [AvailableTest:116][test_drop_table] 
+test_list_tables: 8 tables in 1 conn: 26 ms [2015-06-01 13:46:41] [main:6843ms]-[INFO] [AvailableTest:77][test_list_tables] 
+test_list_tables: 8 tables in 1 conn: 54 ms [2015-06-01 13:47:14] [main:0ms]-[INFO] [AvailableTest:77][test_list_tables] 
+test_create_table: ava_test_table_1433137634319 in 1 conn: 1334 ms [2015-06-01 13:47:15] [main:1436ms]-[INFO] [AvailableTest:97][test_create_table] 
+test_list_tables: 10 tables in 1 conn: 49 ms [2015-06-01 13:47:15] [main:1587ms]-[INFO] [AvailableTest:77][test_list_tables] 
+test_put: 10 items in 1 conn: 7 ms [2015-06-01 13:47:16] [main:1696ms]-[INFO] [AvailableTest:143][test_put] 
+test_get: 0 items in 1 conn: 25 ms [2015-06-01 13:47:18] [main:3722ms]-[INFO] [AvailableTest:169][test_get] 
+test_drop_table: ava_test_table_1433137634319 in 1 conn: 5092 ms [2015-06-01 13:47:23] [main:8914ms]-[INFO] [AvailableTest:116][test_drop_table] 
+test_list_tables: 8 tables in 1 conn: 29 ms [2015-06-01 13:47:23] [main:9043ms]-[INFO] [AvailableTest:77][test_list_tables] 
+test_list_tables: 8 tables in 1 conn: 2880 ms [2015-06-01 13:47:32] [main:0ms]-[INFO] [AvailableTest:77][test_list_tables] 
+test_create_table: ava_test_table_1433137649765 in 1 conn: 1843 ms [2015-06-01 13:47:34] [main:1945ms]-[INFO] [AvailableTest:97][test_create_table] 
+test_list_tables: 10 tables in 1 conn: 46 ms [2015-06-01 13:47:34] [main:2098ms]-[INFO] [AvailableTest:77][test_list_tables] 
+test_put: 10 items in 1 conn: 17 ms [2015-06-01 13:47:34] [main:2220ms]-[INFO] [AvailableTest:143][test_put] 
+test_get: 0 items in 1 conn: 1032 ms [2015-06-01 13:47:37] [main:5255ms]-[INFO] [AvailableTest:169][test_get] 
+test_drop_table: ava_test_table_1433137649765 in 1 conn: 2664 ms [2015-06-01 13:47:40] [main:8019ms]-[INFO] [AvailableTest:116][test_drop_table] 
+test_list_tables: 8 tables in 1 conn: 29 ms [2015-06-01 13:47:40] [main:8148ms]-[INFO] [AvailableTest:77][test_list_tables] 
+test_list_tables: 8 tables in 1 conn: 55 ms [2015-06-01 13:48:12] [main:0ms]-[INFO] [AvailableTest:77][test_list_tables] 
+test_create_table: ava_test_table_1433137692224 in 1 conn: 728 ms [2015-06-01 13:48:13] [main:830ms]-[INFO] [AvailableTest:97][test_create_table] 
+test_list_tables: 10 tables in 1 conn: 48 ms [2015-06-01 13:48:13] [main:980ms]-[INFO] [AvailableTest:77][test_list_tables] 
+test_put: 10 items in 1 conn: 1005 ms [2015-06-01 13:48:14] [main:2086ms]-[INFO] [AvailableTest:143][test_put] 
+test_get: 0 items in 1 conn: 24 ms [2015-06-01 13:48:16] [main:4111ms]-[INFO] [AvailableTest:169][test_get] 
+test_drop_table: ava_test_table_1433137692224 in 1 conn: 2652 ms [2015-06-01 13:48:19] [main:6864ms]-[INFO] [AvailableTest:116][test_drop_table] 
+test_list_tables: 8 tables in 1 conn: 25 ms [2015-06-01 13:48:19] [main:6990ms]-[INFO] [AvailableTest:77][test_list_tables] 
+test_list_tables: 8 tables in 1 conn: 65 ms [2015-06-01 13:48:28] [main:0ms]-[INFO] [AvailableTest:77][test_list_tables] 
+test_create_table: ava_test_table_1433137707960 in 1 conn: 1327 ms [2015-06-01 13:48:29] [main:1429ms]-[INFO] [AvailableTest:97][test_create_table] 
+test_list_tables: 10 tables in 1 conn: 46 ms [2015-06-01 13:48:29] [main:1577ms]-[INFO] [AvailableTest:77][test_list_tables] 
+test_put: 10 items in 1 conn: 7 ms [2015-06-01 13:48:29] [main:1685ms]-[INFO] [AvailableTest:143][test_put] 
+test_get: 0 items in 1 conn: 1022 ms [2015-06-01 13:48:39] [main:11708ms]-[INFO] [AvailableTest:169][test_get] 
+test_drop_table: ava_test_table_1433137707960 in 1 conn: 2657 ms [2015-06-01 13:48:42] [main:14465ms]-[INFO] [AvailableTest:116][test_drop_table] 
+test_list_tables: 8 tables in 1 conn: 1035 ms [2015-06-01 13:48:43] [main:15600ms]-[INFO] [AvailableTest:77][test_list_tables] 
+test_list_tables: 8 tables in 1 conn: 54 ms [2015-06-01 13:49:44] [main:0ms]-[INFO] [AvailableTest:77][test_list_tables] 
+test_create_table: ava_test_table_1433137784802 in 1 conn: 1844 ms [2015-06-01 13:49:46] [main:1945ms]-[INFO] [AvailableTest:97][test_create_table] 
+test_list_tables: 10 tables in 1 conn: 44 ms [2015-06-01 13:49:46] [main:2092ms]-[INFO] [AvailableTest:77][test_list_tables] 
+test_put: 10 items in 1 conn: 7 ms [2015-06-01 13:49:47] [main:2201ms]-[INFO] [AvailableTest:143][test_put] 
+test_get: 0 items in 1 conn: 25 ms [2015-06-01 13:49:56] [main:11227ms]-[INFO] [AvailableTest:169][test_get] 
+test_drop_table: ava_test_table_1433137784802 in 1 conn: 2674 ms [2015-06-01 13:49:58] [main:14001ms]-[INFO] [AvailableTest:116][test_drop_table] 
+test_list_tables: 8 tables in 1 conn: 39 ms [2015-06-01 13:49:58] [main:14140ms]-[INFO] [AvailableTest:77][test_list_tables] 
+test_list_tables: 8 tables in 1 conn: 44 ms [2015-06-01 13:53:17] [main:0ms]-[INFO] [AvailableTest:77][test_list_tables] 
+test_create_table: ava_test_table_1433137997524 in 1 conn: 1524 ms [2015-06-01 13:53:19] [main:1626ms]-[INFO] [AvailableTest:97][test_create_table] 
+test_list_tables: 10 tables in 1 conn: 34 ms [2015-06-01 13:53:19] [main:1762ms]-[INFO] [AvailableTest:77][test_list_tables] 
+test_put: 10 items in 1 conn: 6 ms [2015-06-01 13:53:19] [main:1870ms]-[INFO] [AvailableTest:143][test_put] 
+test_get: 10 items in 1 conn: 23 ms [2015-06-01 13:53:20] [main:2793ms]-[INFO] [AvailableTest:169][test_get] 
+test_drop_table: ava_test_table_1433137997524 in 1 conn: 2658 ms [2015-06-01 13:53:23] [main:5552ms]-[INFO] [AvailableTest:116][test_drop_table] 
+test_list_tables: 8 tables in 1 conn: 28 ms [2015-06-01 13:53:23] [main:5681ms]-[INFO] [AvailableTest:77][test_list_tables] 
+test_list_tables: 8 tables in 1 conn: 52 ms [2015-06-01 13:53:40] [main:0ms]-[INFO] [AvailableTest:77][test_list_tables] 
+test_create_table: ava_test_table_1433138020131 in 1 conn: 1320 ms [2015-06-01 13:53:41] [main:1422ms]-[INFO] [AvailableTest:97][test_create_table] 
+test_list_tables: 10 tables in 1 conn: 33 ms [2015-06-01 13:53:41] [main:1557ms]-[INFO] [AvailableTest:77][test_list_tables] 
+test_put: 10 items in 1 conn: 5 ms [2015-06-01 13:53:41] [main:1664ms]-[INFO] [AvailableTest:143][test_put] 
+test_get: 10 items in 1 conn: 19 ms [2015-06-01 13:53:42] [main:2584ms]-[INFO] [AvailableTest:169][test_get] 
+test_drop_table: ava_test_table_1433138020131 in 1 conn: 2596 ms [2015-06-01 13:53:45] [main:5280ms]-[INFO] [AvailableTest:116][test_drop_table] 
+test_list_tables: 8 tables in 1 conn: 29 ms [2015-06-01 13:53:45] [main:5409ms]-[INFO] [AvailableTest:77][test_list_tables] 
+test_list_tables: 17 tables in 1 conn: 118 ms [2015-06-01 14:04:08] [Thread-1:0ms]-[INFO] [AvailableTest:81][test_list_tables] 
+test_list_tables: 17 tables in 1 conn: 156 ms [2015-06-01 14:04:08] [Thread-2:38ms]-[INFO] [AvailableTest:81][test_list_tables] 
+test_list_tables: 17 tables in 1 conn: 156 ms [2015-06-01 14:04:08] [Thread-0:38ms]-[INFO] [AvailableTest:81][test_list_tables] 
+test_list_tables: 17 tables in 1 conn: 158 ms [2015-06-01 14:04:08] [Thread-3:40ms]-[INFO] [AvailableTest:81][test_list_tables] 
+test_create_table: ava_test_table_1433138648784 in 1 conn: 507 ms [2015-06-01 14:04:09] [Thread-0:645ms]-[INFO] [AvailableTest:101][test_create_table] 
+test_create_table: ava_test_table_1433138648784 in 1 conn: 539 ms [2015-06-01 14:04:09] [Thread-2:678ms]-[INFO] [AvailableTest:101][test_create_table] 
+test_create_table: ava_test_table_1433138648784 in 1 conn: 535 ms [2015-06-01 14:04:09] [Thread-3:678ms]-[INFO] [AvailableTest:101][test_create_table] 
+test_list_tables: 18 tables in 1 conn: 36 ms [2015-06-01 14:04:09] [Thread-0:782ms]-[INFO] [AvailableTest:81][test_list_tables] 
+test_list_tables: 18 tables in 1 conn: 79 ms [2015-06-01 14:04:09] [Thread-3:857ms]-[INFO] [AvailableTest:81][test_list_tables] 
+test_put: 10 items in 1 conn: 5 ms [2015-06-01 14:04:09] [Thread-0:889ms]-[INFO] [AvailableTest:147][test_put] 
+test_put: 10 items in 1 conn: 3 ms [2015-06-01 14:04:09] [Thread-3:960ms]-[INFO] [AvailableTest:147][test_put] 
+test_list_tables: 18 tables in 1 conn: 244 ms [2015-06-01 14:04:09] [Thread-2:1022ms]-[INFO] [AvailableTest:81][test_list_tables] 
+test_put: 10 items in 1 conn: 2 ms [2015-06-01 14:04:10] [Thread-2:1125ms]-[INFO] [AvailableTest:147][test_put] 
+test_get: 30 items in 1 conn: 20 ms [2015-06-01 14:04:10] [Thread-3:1881ms]-[INFO] [AvailableTest:173][test_get] 
+test_create_table: ava_test_table_1433138648784 in 1 conn: 1797 ms [2015-06-01 14:04:10] [Thread-1:1899ms]-[INFO] [AvailableTest:101][test_create_table] 
+test_get: 30 items in 1 conn: 11 ms [2015-06-01 14:04:10] [Thread-2:2037ms]-[INFO] [AvailableTest:173][test_get] 
+test_get: 30 items in 1 conn: 1008 ms [2015-06-01 14:04:11] [Thread-0:2798ms]-[INFO] [AvailableTest:173][test_get] 
+test_drop_table: ava_test_table_1433138648784 in 1 conn: 882 ms [2015-06-01 14:04:11] [Thread-2:3021ms]-[INFO] [AvailableTest:120][test_drop_table] 
+test_list_tables: 19 tables in 1 conn: 1045 ms [2015-06-01 14:04:11] [Thread-1:3045ms]-[INFO] [AvailableTest:81][test_list_tables] 
+test_drop_table: ava_test_table_1433138648784 in 1 conn: 160 ms [2015-06-01 14:04:11] [Thread-0:3060ms]-[INFO] [AvailableTest:120][test_drop_table] 
+test_put: 10 items in 1 conn: 2 ms [2015-06-01 14:04:12] [Thread-1:3148ms]-[INFO] [AvailableTest:147][test_put] 
+test_list_tables: 18 tables in 1 conn: 65 ms [2015-06-01 14:04:12] [Thread-0:3225ms]-[INFO] [AvailableTest:81][test_list_tables] 
+test_list_tables: 18 tables in 1 conn: 1042 ms [2015-06-01 14:04:13] [Thread-2:4164ms]-[INFO] [AvailableTest:81][test_list_tables] 
+test_get: 30 items in 1 conn: 315 ms [2015-06-01 14:04:13] [Thread-1:4363ms]-[INFO] [AvailableTest:173][test_get] 
+test_drop_table: ava_test_table_1433138648784 in 1 conn: 29 ms [2015-06-01 14:04:13] [Thread-1:4492ms]-[INFO] [AvailableTest:120][test_drop_table] 
+test_list_tables: 17 tables in 1 conn: 36 ms [2015-06-01 14:04:13] [Thread-1:4629ms]-[INFO] [AvailableTest:81][test_list_tables] 
+test_drop_table: ava_test_table_1433138648784 in 1 conn: 2779 ms [2015-06-01 14:04:13] [Thread-3:4760ms]-[INFO] [AvailableTest:120][test_drop_table] 
+test_list_tables: 17 tables in 1 conn: 50 ms [2015-06-01 14:04:13] [Thread-3:4910ms]-[INFO] [AvailableTest:81][test_list_tables] 
+list all the table names failure [2015-06-01 14:06:24] [Thread-0:1ms]-[ERROR] [Connection:441][listTableNames] 
+org.apache.thrift.TApplicationException: Internal error processing listTableNames
+	at org.apache.thrift.TApplicationException.read(TApplicationException.java:111)
+	at org.apache.thrift.TServiceClient.receiveBase(TServiceClient.java:71)
+	at org.cesl.sensordb.service.SensorDBRPC$Client.recv_listTableNames(SensorDBRPC.java:358)
+	at org.cesl.sensordb.service.SensorDBRPC$Client.listTableNames(SensorDBRPC.java:346)
+	at org.cesl.sensordb.client.Connection.listTableNames(Connection.java:439)
+	at com.inesa.sensordb.api.test.AvailableTest.test_list_tables(AvailableTest.java:79)
+	at com.inesa.sensordb.api.test.AvailableTest.run_available_test(AvailableTest.java:51)
+	at com.inesa.sensordb.api.test.ConcurrentTest$MyWorker.run(ConcurrentTest.java:76)
+	at java.lang.Thread.run(Thread.java:745)
+list all the table names failure [2015-06-01 14:06:24] [Thread-1:10ms]-[ERROR] [Connection:441][listTableNames] 
+org.apache.thrift.TApplicationException: Internal error processing listTableNames
+	at org.apache.thrift.TApplicationException.read(TApplicationException.java:111)
+	at org.apache.thrift.TServiceClient.receiveBase(TServiceClient.java:71)
+	at org.cesl.sensordb.service.SensorDBRPC$Client.recv_listTableNames(SensorDBRPC.java:358)
+	at org.cesl.sensordb.service.SensorDBRPC$Client.listTableNames(SensorDBRPC.java:346)
+	at org.cesl.sensordb.client.Connection.listTableNames(Connection.java:439)
+	at com.inesa.sensordb.api.test.AvailableTest.test_list_tables(AvailableTest.java:79)
+	at com.inesa.sensordb.api.test.AvailableTest.run_available_test(AvailableTest.java:51)
+	at com.inesa.sensordb.api.test.ConcurrentTest$MyWorker.run(ConcurrentTest.java:76)
+	at java.lang.Thread.run(Thread.java:745)
+list all the table names failure [2015-06-01 14:06:24] [Thread-3:29ms]-[ERROR] [Connection:441][listTableNames] 
+org.apache.thrift.TApplicationException: Internal error processing listTableNames
+	at org.apache.thrift.TApplicationException.read(TApplicationException.java:111)
+	at org.apache.thrift.TServiceClient.receiveBase(TServiceClient.java:71)
+	at org.cesl.sensordb.service.SensorDBRPC$Client.recv_listTableNames(SensorDBRPC.java:358)
+	at org.cesl.sensordb.service.SensorDBRPC$Client.listTableNames(SensorDBRPC.java:346)
+	at org.cesl.sensordb.client.Connection.listTableNames(Connection.java:439)
+	at com.inesa.sensordb.api.test.AvailableTest.test_list_tables(AvailableTest.java:79)
+	at com.inesa.sensordb.api.test.AvailableTest.run_available_test(AvailableTest.java:51)
+	at com.inesa.sensordb.api.test.ConcurrentTest$MyWorker.run(ConcurrentTest.java:76)
+	at java.lang.Thread.run(Thread.java:745)
+test_list_tables: 19 tables in 1 conn: 138 ms [2015-06-01 14:06:24] [Thread-2:113ms]-[INFO] [AvailableTest:81][test_list_tables] 
+create table ava_test_table_1433138784661 failure [2015-06-01 14:06:24] [Thread-2:221ms]-[ERROR] [Connection:87][createTable] 
+org.apache.thrift.TApplicationException: Internal error processing createTable
+	at org.apache.thrift.TApplicationException.read(TApplicationException.java:111)
+	at org.apache.thrift.TServiceClient.receiveBase(TServiceClient.java:71)
+	at org.cesl.sensordb.service.SensorDBRPC$Client.recv_createTable(SensorDBRPC.java:141)
+	at org.cesl.sensordb.service.SensorDBRPC$Client.createTable(SensorDBRPC.java:128)
+	at org.cesl.sensordb.client.Connection.createTable(Connection.java:85)
+	at com.inesa.sensordb.api.test.AvailableTest.test_create_table(AvailableTest.java:99)
+	at com.inesa.sensordb.api.test.AvailableTest.run_available_test(AvailableTest.java:54)
+	at com.inesa.sensordb.api.test.ConcurrentTest$MyWorker.run(ConcurrentTest.java:76)
+	at java.lang.Thread.run(Thread.java:745)
+test_create_table: ava_test_table_1433138784661 in 1 conn: 8 ms [2015-06-01 14:06:24] [Thread-2:221ms]-[INFO] [AvailableTest:101][test_create_table] 
+list all the table names failure [2015-06-01 14:06:25] [Thread-2:327ms]-[ERROR] [Connection:441][listTableNames] 
+org.apache.thrift.TApplicationException: Internal error processing listTableNames
+	at org.apache.thrift.TApplicationException.read(TApplicationException.java:111)
+	at org.apache.thrift.TServiceClient.receiveBase(TServiceClient.java:71)
+	at org.cesl.sensordb.service.SensorDBRPC$Client.recv_listTableNames(SensorDBRPC.java:358)
+	at org.cesl.sensordb.service.SensorDBRPC$Client.listTableNames(SensorDBRPC.java:346)
+	at org.cesl.sensordb.client.Connection.listTableNames(Connection.java:439)
+	at com.inesa.sensordb.api.test.AvailableTest.test_list_tables(AvailableTest.java:79)
+	at com.inesa.sensordb.api.test.AvailableTest.run_available_test(AvailableTest.java:57)
+	at com.inesa.sensordb.api.test.ConcurrentTest$MyWorker.run(ConcurrentTest.java:76)
+	at java.lang.Thread.run(Thread.java:745)
+list all the table names failure [2015-06-01 14:06:57] [Thread-3:0ms]-[ERROR] [Connection:441][listTableNames] 
+org.apache.thrift.TApplicationException: Internal error processing listTableNames
+	at org.apache.thrift.TApplicationException.read(TApplicationException.java:111)
+	at org.apache.thrift.TServiceClient.receiveBase(TServiceClient.java:71)
+	at org.cesl.sensordb.service.SensorDBRPC$Client.recv_listTableNames(SensorDBRPC.java:358)
+	at org.cesl.sensordb.service.SensorDBRPC$Client.listTableNames(SensorDBRPC.java:346)
+	at org.cesl.sensordb.client.Connection.listTableNames(Connection.java:439)
+	at com.inesa.sensordb.api.test.AvailableTest.test_list_tables(AvailableTest.java:79)
+	at com.inesa.sensordb.api.test.AvailableTest.run_available_test(AvailableTest.java:51)
+	at com.inesa.sensordb.api.test.ConcurrentTest$MyWorker.run(ConcurrentTest.java:76)
+	at java.lang.Thread.run(Thread.java:745)
+list all the table names failure [2015-06-01 14:06:57] [Thread-1:0ms]-[ERROR] [Connection:441][listTableNames] 
+org.apache.thrift.TApplicationException: Internal error processing listTableNames
+	at org.apache.thrift.TApplicationException.read(TApplicationException.java:111)
+	at org.apache.thrift.TServiceClient.receiveBase(TServiceClient.java:71)
+	at org.cesl.sensordb.service.SensorDBRPC$Client.recv_listTableNames(SensorDBRPC.java:358)
+	at org.cesl.sensordb.service.SensorDBRPC$Client.listTableNames(SensorDBRPC.java:346)
+	at org.cesl.sensordb.client.Connection.listTableNames(Connection.java:439)
+	at com.inesa.sensordb.api.test.AvailableTest.test_list_tables(AvailableTest.java:79)
+	at com.inesa.sensordb.api.test.AvailableTest.run_available_test(AvailableTest.java:51)
+	at com.inesa.sensordb.api.test.ConcurrentTest$MyWorker.run(ConcurrentTest.java:76)
+	at java.lang.Thread.run(Thread.java:745)
+list all the table names failure [2015-06-01 14:06:57] [Thread-0:0ms]-[ERROR] [Connection:441][listTableNames] 
+org.apache.thrift.TApplicationException: Internal error processing listTableNames
+	at org.apache.thrift.TApplicationException.read(TApplicationException.java:111)
+	at org.apache.thrift.TServiceClient.receiveBase(TServiceClient.java:71)
+	at org.cesl.sensordb.service.SensorDBRPC$Client.recv_listTableNames(SensorDBRPC.java:358)
+	at org.cesl.sensordb.service.SensorDBRPC$Client.listTableNames(SensorDBRPC.java:346)
+	at org.cesl.sensordb.client.Connection.listTableNames(Connection.java:439)
+	at com.inesa.sensordb.api.test.AvailableTest.test_list_tables(AvailableTest.java:79)
+	at com.inesa.sensordb.api.test.AvailableTest.run_available_test(AvailableTest.java:51)
+	at com.inesa.sensordb.api.test.ConcurrentTest$MyWorker.run(ConcurrentTest.java:76)
+	at java.lang.Thread.run(Thread.java:745)
+test_list_tables: 21 tables in 1 conn: 75 ms [2015-06-01 14:06:58] [Thread-2:140ms]-[INFO] [AvailableTest:81][test_list_tables] 
+test_create_table: ava_test_table_1433138817970 in 1 conn: 1293 ms [2015-06-01 14:06:59] [Thread-2:1533ms]-[INFO] [AvailableTest:101][test_create_table] 
+test_list_tables: 23 tables in 1 conn: 43 ms [2015-06-01 14:06:59] [Thread-2:1676ms]-[INFO] [AvailableTest:81][test_list_tables] 
+test_put: 10 items in 1 conn: 1004 ms [2015-06-01 14:07:00] [Thread-2:2782ms]-[INFO] [AvailableTest:147][test_put] 
+test_get: 10 items in 1 conn: 25 ms [2015-06-01 14:07:01] [Thread-2:3707ms]-[INFO] [AvailableTest:173][test_get] 
+drop table ava_test_table_1433138817970 failure [2015-06-01 14:07:01] [Thread-2:3816ms]-[ERROR] [Connection:101][dropTable] 
+org.apache.thrift.TApplicationException: Internal error processing dropTable
+	at org.apache.thrift.TApplicationException.read(TApplicationException.java:111)
+	at org.apache.thrift.TServiceClient.receiveBase(TServiceClient.java:71)
+	at org.cesl.sensordb.service.SensorDBRPC$Client.recv_dropTable(SensorDBRPC.java:161)
+	at org.cesl.sensordb.service.SensorDBRPC$Client.dropTable(SensorDBRPC.java:148)
+	at org.cesl.sensordb.client.Connection.dropTable(Connection.java:99)
+	at com.inesa.sensordb.api.test.AvailableTest.test_drop_table(AvailableTest.java:118)
+	at com.inesa.sensordb.api.test.AvailableTest.run_available_test(AvailableTest.java:66)
+	at com.inesa.sensordb.api.test.ConcurrentTest$MyWorker.run(ConcurrentTest.java:76)
+	at java.lang.Thread.run(Thread.java:745)
+test_drop_table: ava_test_table_1433138817970 in 1 conn: 10 ms [2015-06-01 14:07:01] [Thread-2:3817ms]-[INFO] [AvailableTest:120][test_drop_table] 
+test_list_tables: 23 tables in 1 conn: 46 ms [2015-06-01 14:07:01] [Thread-2:3964ms]-[INFO] [AvailableTest:81][test_list_tables] 
+list all the table names failure [2015-06-01 14:07:51] [main:0ms]-[ERROR] [Connection:441][listTableNames] 
+org.apache.thrift.TApplicationException: Internal error processing listTableNames
+	at org.apache.thrift.TApplicationException.read(TApplicationException.java:111)
+	at org.apache.thrift.TServiceClient.receiveBase(TServiceClient.java:71)
+	at org.cesl.sensordb.service.SensorDBRPC$Client.recv_listTableNames(SensorDBRPC.java:358)
+	at org.cesl.sensordb.service.SensorDBRPC$Client.listTableNames(SensorDBRPC.java:346)
+	at org.cesl.sensordb.client.Connection.listTableNames(Connection.java:439)
+	at com.inesa.sensordb.api.test.AvailableTest.test_list_tables(AvailableTest.java:79)
+	at com.inesa.sensordb.api.test.AvailableTest.run_available_test(AvailableTest.java:51)
+	at com.inesa.sensordb.api.Main.main(Main.java:58)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at com.intellij.rt.execution.application.AppMain.main(AppMain.java:140)
+list all the table names failure [2015-06-01 14:08:34] [main:0ms]-[ERROR] [Connection:441][listTableNames] 
+org.apache.thrift.TApplicationException: Internal error processing listTableNames
+	at org.apache.thrift.TApplicationException.read(TApplicationException.java:111)
+	at org.apache.thrift.TServiceClient.receiveBase(TServiceClient.java:71)
+	at org.cesl.sensordb.service.SensorDBRPC$Client.recv_listTableNames(SensorDBRPC.java:358)
+	at org.cesl.sensordb.service.SensorDBRPC$Client.listTableNames(SensorDBRPC.java:346)
+	at org.cesl.sensordb.client.Connection.listTableNames(Connection.java:439)
+	at com.inesa.sensordb.api.test.AvailableTest.test_list_tables(AvailableTest.java:79)
+	at com.inesa.sensordb.api.test.AvailableTest.run_available_test(AvailableTest.java:51)
+	at com.inesa.sensordb.api.Main.main(Main.java:58)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at com.intellij.rt.execution.application.AppMain.main(AppMain.java:140)
+test_list_tables: 21 tables in 1 conn: 67 ms [2015-06-01 14:10:12] [main:0ms]-[INFO] [AvailableTest:81][test_list_tables] 
+test_create_table: ava_test_table_1433139011938 in 1 conn: 1307 ms [2015-06-01 14:10:13] [main:1408ms]-[INFO] [AvailableTest:101][test_create_table] 
+test_list_tables: 23 tables in 1 conn: 67 ms [2015-06-01 14:10:13] [main:1577ms]-[INFO] [AvailableTest:81][test_list_tables] 
+test_put: 10 items in 1 conn: 6 ms [2015-06-01 14:10:13] [main:1685ms]-[INFO] [AvailableTest:147][test_put] 
+test_get: 10 items in 1 conn: 37 ms [2015-06-01 14:10:14] [main:2623ms]-[INFO] [AvailableTest:173][test_get] 
+drop table ava_test_table_1433139011938 failure [2015-06-01 14:10:14] [main:2738ms]-[ERROR] [Connection:101][dropTable] 
+org.apache.thrift.TApplicationException: Internal error processing dropTable
+	at org.apache.thrift.TApplicationException.read(TApplicationException.java:111)
+	at org.apache.thrift.TServiceClient.receiveBase(TServiceClient.java:71)
+	at org.cesl.sensordb.service.SensorDBRPC$Client.recv_dropTable(SensorDBRPC.java:161)
+	at org.cesl.sensordb.service.SensorDBRPC$Client.dropTable(SensorDBRPC.java:148)
+	at org.cesl.sensordb.client.Connection.dropTable(Connection.java:99)
+	at com.inesa.sensordb.api.test.AvailableTest.test_drop_table(AvailableTest.java:118)
+	at com.inesa.sensordb.api.test.AvailableTest.run_available_test(AvailableTest.java:66)
+	at com.inesa.sensordb.api.Main.main(Main.java:58)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at com.intellij.rt.execution.application.AppMain.main(AppMain.java:140)
+test_drop_table: ava_test_table_1433139011938 in 1 conn: 16 ms [2015-06-01 14:10:14] [main:2740ms]-[INFO] [AvailableTest:120][test_drop_table] 
+list all the table names failure [2015-06-01 14:10:14] [main:2846ms]-[ERROR] [Connection:441][listTableNames] 
+org.apache.thrift.TApplicationException: Internal error processing listTableNames
+	at org.apache.thrift.TApplicationException.read(TApplicationException.java:111)
+	at org.apache.thrift.TServiceClient.receiveBase(TServiceClient.java:71)
+	at org.cesl.sensordb.service.SensorDBRPC$Client.recv_listTableNames(SensorDBRPC.java:358)
+	at org.cesl.sensordb.service.SensorDBRPC$Client.listTableNames(SensorDBRPC.java:346)
+	at org.cesl.sensordb.client.Connection.listTableNames(Connection.java:439)
+	at com.inesa.sensordb.api.test.AvailableTest.test_list_tables(AvailableTest.java:79)
+	at com.inesa.sensordb.api.test.AvailableTest.run_available_test(AvailableTest.java:69)
+	at com.inesa.sensordb.api.Main.main(Main.java:58)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at com.intellij.rt.execution.application.AppMain.main(AppMain.java:140)
+test_list_tables: 6 tables in 1 conn: 28 ms [2015-06-01 14:13:16] [main:0ms]-[INFO] [AvailableTest:81][test_list_tables] 
+test_create_table: ava_test_table_1433139196036 in 1 conn: 998 ms [2015-06-01 14:13:17] [main:1100ms]-[INFO] [AvailableTest:101][test_create_table] 
+test_list_tables: 8 tables in 1 conn: 29 ms [2015-06-01 14:13:17] [main:1230ms]-[INFO] [AvailableTest:81][test_list_tables] 
+test_put: 10 items in 1 conn: 6 ms [2015-06-01 14:13:17] [main:1337ms]-[INFO] [AvailableTest:147][test_put] 
+test_get: 10 items in 1 conn: 23 ms [2015-06-01 14:13:18] [main:2260ms]-[INFO] [AvailableTest:173][test_get] 
+drop table ava_test_table_1433139196036 failure [2015-06-01 14:13:18] [main:2371ms]-[ERROR] [Connection:101][dropTable] 
+org.apache.thrift.TApplicationException: Internal error processing dropTable
+	at org.apache.thrift.TApplicationException.read(TApplicationException.java:111)
+	at org.apache.thrift.TServiceClient.receiveBase(TServiceClient.java:71)
+	at org.cesl.sensordb.service.SensorDBRPC$Client.recv_dropTable(SensorDBRPC.java:161)
+	at org.cesl.sensordb.service.SensorDBRPC$Client.dropTable(SensorDBRPC.java:148)
+	at org.cesl.sensordb.client.Connection.dropTable(Connection.java:99)
+	at com.inesa.sensordb.api.test.AvailableTest.test_drop_table(AvailableTest.java:118)
+	at com.inesa.sensordb.api.test.AvailableTest.run_available_test(AvailableTest.java:66)
+	at com.inesa.sensordb.api.Main.main(Main.java:59)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at com.intellij.rt.execution.application.AppMain.main(AppMain.java:140)
+test_drop_table: ava_test_table_1433139196036 in 1 conn: 11 ms [2015-06-01 14:13:18] [main:2372ms]-[INFO] [AvailableTest:120][test_drop_table] 
+list all the table names failure [2015-06-01 14:13:18] [main:2477ms]-[ERROR] [Connection:441][listTableNames] 
+org.apache.thrift.TApplicationException: Internal error processing listTableNames
+	at org.apache.thrift.TApplicationException.read(TApplicationException.java:111)
+	at org.apache.thrift.TServiceClient.receiveBase(TServiceClient.java:71)
+	at org.cesl.sensordb.service.SensorDBRPC$Client.recv_listTableNames(SensorDBRPC.java:358)
+	at org.cesl.sensordb.service.SensorDBRPC$Client.listTableNames(SensorDBRPC.java:346)
+	at org.cesl.sensordb.client.Connection.listTableNames(Connection.java:439)
+	at com.inesa.sensordb.api.test.AvailableTest.test_list_tables(AvailableTest.java:79)
+	at com.inesa.sensordb.api.test.AvailableTest.run_available_test(AvailableTest.java:69)
+	at com.inesa.sensordb.api.Main.main(Main.java:59)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at com.intellij.rt.execution.application.AppMain.main(AppMain.java:140)
+list all the table names failure [2015-06-01 14:13:45] [main:0ms]-[ERROR] [Connection:441][listTableNames] 
+org.apache.thrift.TApplicationException: Internal error processing listTableNames
+	at org.apache.thrift.TApplicationException.read(TApplicationException.java:111)
+	at org.apache.thrift.TServiceClient.receiveBase(TServiceClient.java:71)
+	at org.cesl.sensordb.service.SensorDBRPC$Client.recv_listTableNames(SensorDBRPC.java:358)
+	at org.cesl.sensordb.service.SensorDBRPC$Client.listTableNames(SensorDBRPC.java:346)
+	at org.cesl.sensordb.client.Connection.listTableNames(Connection.java:439)
+	at com.inesa.sensordb.api.test.AvailableTest.test_list_tables(AvailableTest.java:79)
+	at com.inesa.sensordb.api.test.AvailableTest.run_available_test(AvailableTest.java:51)
+	at com.inesa.sensordb.api.Main.main(Main.java:59)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at com.intellij.rt.execution.application.AppMain.main(AppMain.java:140)
+test_list_tables: 6 tables in 1 conn: 1044 ms [2015-06-01 14:13:57] [main:0ms]-[INFO] [AvailableTest:81][test_list_tables] 
+test_create_table: ava_test_table_1433139236736 in 1 conn: 1291 ms [2015-06-01 14:13:59] [main:1392ms]-[INFO] [AvailableTest:101][test_create_table] 
+test_list_tables: 8 tables in 1 conn: 38 ms [2015-06-01 14:13:59] [main:1532ms]-[INFO] [AvailableTest:81][test_list_tables] 
+test_put: 10 items in 1 conn: 1003 ms [2015-06-01 14:14:00] [main:2640ms]-[INFO] [AvailableTest:147][test_put] 
+test_get: 10 items in 1 conn: 24 ms [2015-06-01 14:14:01] [main:3564ms]-[INFO] [AvailableTest:173][test_get] 
+drop table ava_test_table_1433139236736 failure [2015-06-01 14:14:01] [main:3675ms]-[ERROR] [Connection:101][dropTable] 
+org.apache.thrift.TApplicationException: Internal error processing dropTable
+	at org.apache.thrift.TApplicationException.read(TApplicationException.java:111)
+	at org.apache.thrift.TServiceClient.receiveBase(TServiceClient.java:71)
+	at org.cesl.sensordb.service.SensorDBRPC$Client.recv_dropTable(SensorDBRPC.java:161)
+	at org.cesl.sensordb.service.SensorDBRPC$Client.dropTable(SensorDBRPC.java:148)
+	at org.cesl.sensordb.client.Connection.dropTable(Connection.java:99)
+	at com.inesa.sensordb.api.test.AvailableTest.test_drop_table(AvailableTest.java:118)
+	at com.inesa.sensordb.api.test.AvailableTest.run_available_test(AvailableTest.java:66)
+	at com.inesa.sensordb.api.Main.main(Main.java:59)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at com.intellij.rt.execution.application.AppMain.main(AppMain.java:140)
+test_drop_table: ava_test_table_1433139236736 in 1 conn: 13 ms [2015-06-01 14:14:01] [main:3677ms]-[INFO] [AvailableTest:120][test_drop_table] 
+test_list_tables: 8 tables in 1 conn: 234 ms [2015-06-01 14:14:01] [main:4011ms]-[INFO] [AvailableTest:81][test_list_tables] 
+list all the table names failure [2015-06-01 14:14:23] [main:1ms]-[ERROR] [Connection:441][listTableNames] 
+org.apache.thrift.TApplicationException: Internal error processing listTableNames
+	at org.apache.thrift.TApplicationException.read(TApplicationException.java:111)
+	at org.apache.thrift.TServiceClient.receiveBase(TServiceClient.java:71)
+	at org.cesl.sensordb.service.SensorDBRPC$Client.recv_listTableNames(SensorDBRPC.java:358)
+	at org.cesl.sensordb.service.SensorDBRPC$Client.listTableNames(SensorDBRPC.java:346)
+	at org.cesl.sensordb.client.Connection.listTableNames(Connection.java:439)
+	at com.inesa.sensordb.api.test.AvailableTest.test_list_tables(AvailableTest.java:79)
+	at com.inesa.sensordb.api.test.AvailableTest.run_available_test(AvailableTest.java:51)
+	at com.inesa.sensordb.api.Main.main(Main.java:59)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at com.intellij.rt.execution.application.AppMain.main(AppMain.java:140)
+list all the table names failure [2015-06-01 14:15:11] [main:1ms]-[ERROR] [Connection:441][listTableNames] 
+org.apache.thrift.TApplicationException: Internal error processing listTableNames
+	at org.apache.thrift.TApplicationException.read(TApplicationException.java:111)
+	at org.apache.thrift.TServiceClient.receiveBase(TServiceClient.java:71)
+	at org.cesl.sensordb.service.SensorDBRPC$Client.recv_listTableNames(SensorDBRPC.java:358)
+	at org.cesl.sensordb.service.SensorDBRPC$Client.listTableNames(SensorDBRPC.java:346)
+	at org.cesl.sensordb.client.Connection.listTableNames(Connection.java:439)
+	at com.inesa.sensordb.api.test.AvailableTest.test_list_tables(AvailableTest.java:79)
+	at com.inesa.sensordb.api.test.AvailableTest.run_available_test(AvailableTest.java:51)
+	at com.inesa.sensordb.api.Main.main(Main.java:59)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at com.intellij.rt.execution.application.AppMain.main(AppMain.java:140)
+list all the table names failure [2015-06-01 14:15:16] [main:0ms]-[ERROR] [Connection:441][listTableNames] 
+org.apache.thrift.TApplicationException: Internal error processing listTableNames
+	at org.apache.thrift.TApplicationException.read(TApplicationException.java:111)
+	at org.apache.thrift.TServiceClient.receiveBase(TServiceClient.java:71)
+	at org.cesl.sensordb.service.SensorDBRPC$Client.recv_listTableNames(SensorDBRPC.java:358)
+	at org.cesl.sensordb.service.SensorDBRPC$Client.listTableNames(SensorDBRPC.java:346)
+	at org.cesl.sensordb.client.Connection.listTableNames(Connection.java:439)
+	at com.inesa.sensordb.api.test.AvailableTest.test_list_tables(AvailableTest.java:79)
+	at com.inesa.sensordb.api.test.AvailableTest.run_available_test(AvailableTest.java:51)
+	at com.inesa.sensordb.api.Main.main(Main.java:59)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at com.intellij.rt.execution.application.AppMain.main(AppMain.java:140)
+test_list_tables: 7 tables in 1 conn: 41 ms [2015-06-01 14:15:51] [main:0ms]-[INFO] [AvailableTest:81][test_list_tables] 
+test_create_table: ava_test_table_1433139351193 in 1 conn: 1303 ms [2015-06-01 14:15:53] [main:2305ms]-[INFO] [AvailableTest:101][test_create_table] 
+test_list_tables: 9 tables in 1 conn: 241 ms [2015-06-01 14:15:54] [main:3548ms]-[INFO] [AvailableTest:81][test_list_tables] 
+test_put: 10 items in 1 conn: 9 ms [2015-06-01 14:15:55] [main:4558ms]-[INFO] [AvailableTest:147][test_put] 
+test_get: 10 items in 1 conn: 22 ms [2015-06-01 14:15:57] [main:6581ms]-[INFO] [AvailableTest:173][test_get] 
+drop table ava_test_table_1433139351193 failure [2015-06-01 14:15:58] [main:7591ms]-[ERROR] [Connection:101][dropTable] 
+org.apache.thrift.TApplicationException: Internal error processing dropTable
+	at org.apache.thrift.TApplicationException.read(TApplicationException.java:111)
+	at org.apache.thrift.TServiceClient.receiveBase(TServiceClient.java:71)
+	at org.cesl.sensordb.service.SensorDBRPC$Client.recv_dropTable(SensorDBRPC.java:161)
+	at org.cesl.sensordb.service.SensorDBRPC$Client.dropTable(SensorDBRPC.java:148)
+	at org.cesl.sensordb.client.Connection.dropTable(Connection.java:99)
+	at com.inesa.sensordb.api.test.AvailableTest.test_drop_table(AvailableTest.java:118)
+	at com.inesa.sensordb.api.test.AvailableTest.run_available_test(AvailableTest.java:66)
+	at com.inesa.sensordb.api.Main.main(Main.java:59)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at com.intellij.rt.execution.application.AppMain.main(AppMain.java:140)
+test_drop_table: ava_test_table_1433139351193 in 1 conn: 12 ms [2015-06-01 14:15:58] [main:7593ms]-[INFO] [AvailableTest:120][test_drop_table] 
+test_list_tables: 9 tables in 1 conn: 27 ms [2015-06-01 14:15:59] [main:8620ms]-[INFO] [AvailableTest:81][test_list_tables] 
+list all the table names failure [2015-06-01 14:16:33] [main:0ms]-[ERROR] [Connection:441][listTableNames] 
+org.apache.thrift.TApplicationException: Internal error processing listTableNames
+	at org.apache.thrift.TApplicationException.read(TApplicationException.java:111)
+	at org.apache.thrift.TServiceClient.receiveBase(TServiceClient.java:71)
+	at org.cesl.sensordb.service.SensorDBRPC$Client.recv_listTableNames(SensorDBRPC.java:358)
+	at org.cesl.sensordb.service.SensorDBRPC$Client.listTableNames(SensorDBRPC.java:346)
+	at org.cesl.sensordb.client.Connection.listTableNames(Connection.java:439)
+	at com.inesa.sensordb.api.test.AvailableTest.test_list_tables(AvailableTest.java:79)
+	at com.inesa.sensordb.api.test.AvailableTest.run_available_test(AvailableTest.java:51)
+	at com.inesa.sensordb.api.Main.main(Main.java:59)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at com.intellij.rt.execution.application.AppMain.main(AppMain.java:140)
+list all the table names failure [2015-06-01 14:16:38] [main:1ms]-[ERROR] [Connection:441][listTableNames] 
+org.apache.thrift.TApplicationException: Internal error processing listTableNames
+	at org.apache.thrift.TApplicationException.read(TApplicationException.java:111)
+	at org.apache.thrift.TServiceClient.receiveBase(TServiceClient.java:71)
+	at org.cesl.sensordb.service.SensorDBRPC$Client.recv_listTableNames(SensorDBRPC.java:358)
+	at org.cesl.sensordb.service.SensorDBRPC$Client.listTableNames(SensorDBRPC.java:346)
+	at org.cesl.sensordb.client.Connection.listTableNames(Connection.java:439)
+	at com.inesa.sensordb.api.test.AvailableTest.test_list_tables(AvailableTest.java:79)
+	at com.inesa.sensordb.api.test.AvailableTest.run_available_test(AvailableTest.java:51)
+	at com.inesa.sensordb.api.Main.main(Main.java:59)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at com.intellij.rt.execution.application.AppMain.main(AppMain.java:140)
+test_list_tables: 8 tables in 1 conn: 46 ms [2015-06-01 14:19:51] [main:0ms]-[INFO] [AvailableTest:81][test_list_tables] 
+test_create_table: ava_test_table_1433139591193 in 1 conn: 1007 ms [2015-06-01 14:19:53] [main:2009ms]-[INFO] [AvailableTest:101][test_create_table] 
+test_list_tables: 10 tables in 1 conn: 36 ms [2015-06-01 14:19:54] [main:3046ms]-[INFO] [AvailableTest:81][test_list_tables] 
+test_put: 10 items in 1 conn: 6 ms [2015-06-01 14:19:55] [main:4053ms]-[INFO] [AvailableTest:147][test_put] 
+test_get: 10 items in 1 conn: 25 ms [2015-06-01 14:19:57] [main:6078ms]-[INFO] [AvailableTest:173][test_get] 
+drop table ava_test_table_1433139591193 failure [2015-06-01 14:19:58] [main:7088ms]-[ERROR] [Connection:101][dropTable] 
+org.apache.thrift.TApplicationException: Internal error processing dropTable
+	at org.apache.thrift.TApplicationException.read(TApplicationException.java:111)
+	at org.apache.thrift.TServiceClient.receiveBase(TServiceClient.java:71)
+	at org.cesl.sensordb.service.SensorDBRPC$Client.recv_dropTable(SensorDBRPC.java:161)
+	at org.cesl.sensordb.service.SensorDBRPC$Client.dropTable(SensorDBRPC.java:148)
+	at org.cesl.sensordb.client.Connection.dropTable(Connection.java:99)
+	at com.inesa.sensordb.api.test.AvailableTest.test_drop_table(AvailableTest.java:118)
+	at com.inesa.sensordb.api.test.AvailableTest.run_available_test(AvailableTest.java:66)
+	at com.inesa.sensordb.api.Main.main(Main.java:59)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at com.intellij.rt.execution.application.AppMain.main(AppMain.java:140)
+test_drop_table: ava_test_table_1433139591193 in 1 conn: 12 ms [2015-06-01 14:19:58] [main:7090ms]-[INFO] [AvailableTest:120][test_drop_table] 
+list all the table names failure [2015-06-01 14:19:59] [main:8096ms]-[ERROR] [Connection:441][listTableNames] 
+org.apache.thrift.TApplicationException: Internal error processing listTableNames
+	at org.apache.thrift.TApplicationException.read(TApplicationException.java:111)
+	at org.apache.thrift.TServiceClient.receiveBase(TServiceClient.java:71)
+	at org.cesl.sensordb.service.SensorDBRPC$Client.recv_listTableNames(SensorDBRPC.java:358)
+	at org.cesl.sensordb.service.SensorDBRPC$Client.listTableNames(SensorDBRPC.java:346)
+	at org.cesl.sensordb.client.Connection.listTableNames(Connection.java:439)
+	at com.inesa.sensordb.api.test.AvailableTest.test_list_tables(AvailableTest.java:79)
+	at com.inesa.sensordb.api.test.AvailableTest.run_available_test(AvailableTest.java:69)
+	at com.inesa.sensordb.api.Main.main(Main.java:59)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at com.intellij.rt.execution.application.AppMain.main(AppMain.java:140)
+test_list_tables: 9 tables in 1 conn: 55 ms [2015-06-01 14:21:16] [main:0ms]-[INFO] [AvailableTest:81][test_list_tables] 
+test_create_table: ava_test_table_1433139676814 in 1 conn: 1304 ms [2015-06-01 14:21:19] [main:2306ms]-[INFO] [AvailableTest:101][test_create_table] 
+test_list_tables: 11 tables in 1 conn: 36 ms [2015-06-01 14:21:20] [main:3344ms]-[INFO] [AvailableTest:81][test_list_tables] 
+test_put: 10 items in 1 conn: 6 ms [2015-06-01 14:21:21] [main:4352ms]-[INFO] [AvailableTest:147][test_put] 
+test_get: 10 items in 1 conn: 25 ms [2015-06-01 14:21:23] [main:6377ms]-[INFO] [AvailableTest:173][test_get] 
+drop table ava_test_table_1433139676814 failure [2015-06-01 14:21:24] [main:7390ms]-[ERROR] [Connection:101][dropTable] 
+org.apache.thrift.TApplicationException: Internal error processing dropTable
+	at org.apache.thrift.TApplicationException.read(TApplicationException.java:111)
+	at org.apache.thrift.TServiceClient.receiveBase(TServiceClient.java:71)
+	at org.cesl.sensordb.service.SensorDBRPC$Client.recv_dropTable(SensorDBRPC.java:161)
+	at org.cesl.sensordb.service.SensorDBRPC$Client.dropTable(SensorDBRPC.java:148)
+	at org.cesl.sensordb.client.Connection.dropTable(Connection.java:99)
+	at com.inesa.sensordb.api.test.AvailableTest.test_drop_table(AvailableTest.java:118)
+	at com.inesa.sensordb.api.test.AvailableTest.run_available_test(AvailableTest.java:66)
+	at com.inesa.sensordb.api.Main.main(Main.java:59)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at com.intellij.rt.execution.application.AppMain.main(AppMain.java:140)
+test_drop_table: ava_test_table_1433139676814 in 1 conn: 14 ms [2015-06-01 14:21:24] [main:7392ms]-[INFO] [AvailableTest:120][test_drop_table] 
+test_list_tables: 11 tables in 1 conn: 29 ms [2015-06-01 14:21:25] [main:8422ms]-[INFO] [AvailableTest:81][test_list_tables] 
+list all the table names failure [2015-06-01 14:21:42] [main:0ms]-[ERROR] [Connection:441][listTableNames] 
+org.apache.thrift.TApplicationException: Internal error processing listTableNames
+	at org.apache.thrift.TApplicationException.read(TApplicationException.java:111)
+	at org.apache.thrift.TServiceClient.receiveBase(TServiceClient.java:71)
+	at org.cesl.sensordb.service.SensorDBRPC$Client.recv_listTableNames(SensorDBRPC.java:358)
+	at org.cesl.sensordb.service.SensorDBRPC$Client.listTableNames(SensorDBRPC.java:346)
+	at org.cesl.sensordb.client.Connection.listTableNames(Connection.java:439)
+	at com.inesa.sensordb.api.test.AvailableTest.test_list_tables(AvailableTest.java:79)
+	at com.inesa.sensordb.api.test.AvailableTest.run_available_test(AvailableTest.java:51)
+	at com.inesa.sensordb.api.Main.main(Main.java:59)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at com.intellij.rt.execution.application.AppMain.main(AppMain.java:140)
+test_list_tables: 9 tables in 1 conn: 44 ms [2015-06-01 14:23:20] [main:0ms]-[INFO] [AvailableTest:81][test_list_tables] 
+test_create_table: ava_test_table_1433139800106 in 1 conn: 2321 ms [2015-06-01 14:23:23] [main:3322ms]-[INFO] [AvailableTest:101][test_create_table] 
+test_put: 10 items in 1 conn: 14 ms [2015-06-01 14:23:24] [main:4346ms]-[INFO] [AvailableTest:147][test_put] 
+test_get: 10 items in 1 conn: 24 ms [2015-06-01 14:23:26] [main:6371ms]-[INFO] [AvailableTest:173][test_get] 
+drop table ava_test_table_1433139800106 failure [2015-06-01 14:23:27] [main:7401ms]-[ERROR] [Connection:101][dropTable] 
+org.apache.thrift.TApplicationException: Internal error processing dropTable
+	at org.apache.thrift.TApplicationException.read(TApplicationException.java:111)
+	at org.apache.thrift.TServiceClient.receiveBase(TServiceClient.java:71)
+	at org.cesl.sensordb.service.SensorDBRPC$Client.recv_dropTable(SensorDBRPC.java:161)
+	at org.cesl.sensordb.service.SensorDBRPC$Client.dropTable(SensorDBRPC.java:148)
+	at org.cesl.sensordb.client.Connection.dropTable(Connection.java:99)
+	at com.inesa.sensordb.api.test.AvailableTest.test_drop_table(AvailableTest.java:118)
+	at com.inesa.sensordb.api.test.AvailableTest.run_available_test(AvailableTest.java:66)
+	at com.inesa.sensordb.api.Main.main(Main.java:59)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at com.intellij.rt.execution.application.AppMain.main(AppMain.java:140)
+test_drop_table: ava_test_table_1433139800106 in 1 conn: 35 ms [2015-06-01 14:23:27] [main:7407ms]-[INFO] [AvailableTest:120][test_drop_table] 
+drop matched tables failure, regex is ^ava_test_table_.* [2015-06-01 14:24:21] [main:1ms]-[ERROR] [Connection:115][dropTables] 
+org.apache.thrift.TApplicationException: Internal error processing dropTables
+	at org.apache.thrift.TApplicationException.read(TApplicationException.java:111)
+	at org.apache.thrift.TServiceClient.receiveBase(TServiceClient.java:71)
+	at org.cesl.sensordb.service.SensorDBRPC$Client.recv_dropTables(SensorDBRPC.java:181)
+	at org.cesl.sensordb.service.SensorDBRPC$Client.dropTables(SensorDBRPC.java:168)
+	at org.cesl.sensordb.client.Connection.dropTables(Connection.java:113)
+	at com.inesa.sensordb.api.Main.main(Main.java:45)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at com.intellij.rt.execution.application.AppMain.main(AppMain.java:140)
+drop matched tables failure, regex is ^ava_test_table_.* [2015-06-01 14:24:40] [main:0ms]-[ERROR] [Connection:115][dropTables] 
+org.apache.thrift.TApplicationException: Internal error processing dropTables
+	at org.apache.thrift.TApplicationException.read(TApplicationException.java:111)
+	at org.apache.thrift.TServiceClient.receiveBase(TServiceClient.java:71)
+	at org.cesl.sensordb.service.SensorDBRPC$Client.recv_dropTables(SensorDBRPC.java:181)
+	at org.cesl.sensordb.service.SensorDBRPC$Client.dropTables(SensorDBRPC.java:168)
+	at org.cesl.sensordb.client.Connection.dropTables(Connection.java:113)
+	at com.inesa.sensordb.api.Main.main(Main.java:45)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at com.intellij.rt.execution.application.AppMain.main(AppMain.java:140)
+test_list_tables: 7 tables in 1 conn: 43 ms [2015-06-01 14:27:01] [main:0ms]-[INFO] [AvailableTest:81][test_list_tables] 
+test_create_table: ava_test_table_1433140021838 in 1 conn: 1299 ms [2015-06-01 14:27:04] [main:2300ms]-[INFO] [AvailableTest:101][test_create_table] 
+test_put: 10 items in 1 conn: 8 ms [2015-06-01 14:27:05] [main:3312ms]-[INFO] [AvailableTest:147][test_put] 
+test_get: 10 items in 1 conn: 23 ms [2015-06-01 14:27:07] [main:5336ms]-[INFO] [AvailableTest:173][test_get] 
+drop table ava_test_table_1433140021838 failure [2015-06-01 14:27:08] [main:6347ms]-[ERROR] [Connection:101][dropTable] 
+org.apache.thrift.TApplicationException: Internal error processing dropTable
+	at org.apache.thrift.TApplicationException.read(TApplicationException.java:111)
+	at org.apache.thrift.TServiceClient.receiveBase(TServiceClient.java:71)
+	at org.cesl.sensordb.service.SensorDBRPC$Client.recv_dropTable(SensorDBRPC.java:161)
+	at org.cesl.sensordb.service.SensorDBRPC$Client.dropTable(SensorDBRPC.java:148)
+	at org.cesl.sensordb.client.Connection.dropTable(Connection.java:99)
+	at com.inesa.sensordb.api.test.AvailableTest.test_drop_table(AvailableTest.java:118)
+	at com.inesa.sensordb.api.test.AvailableTest.run_available_test(AvailableTest.java:66)
+	at com.inesa.sensordb.api.Main.main(Main.java:59)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at com.intellij.rt.execution.application.AppMain.main(AppMain.java:140)
+test_drop_table: ava_test_table_1433140021838 in 1 conn: 12 ms [2015-06-01 14:27:08] [main:6348ms]-[INFO] [AvailableTest:120][test_drop_table] 
+drop matched tables failure, regex is ^ava_test_table_.* [2015-06-01 14:27:39] [main:0ms]-[ERROR] [Connection:115][dropTables] 
+org.apache.thrift.TApplicationException: Internal error processing dropTables
+	at org.apache.thrift.TApplicationException.read(TApplicationException.java:111)
+	at org.apache.thrift.TServiceClient.receiveBase(TServiceClient.java:71)
+	at org.cesl.sensordb.service.SensorDBRPC$Client.recv_dropTables(SensorDBRPC.java:181)
+	at org.cesl.sensordb.service.SensorDBRPC$Client.dropTables(SensorDBRPC.java:168)
+	at org.cesl.sensordb.client.Connection.dropTables(Connection.java:113)
+	at com.inesa.sensordb.api.Main.main(Main.java:45)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at com.intellij.rt.execution.application.AppMain.main(AppMain.java:140)
+test_list_tables: 6 tables in 1 conn: 41 ms [2015-06-01 14:30:32] [main:0ms]-[INFO] [AvailableTest:81][test_list_tables] 
+test_create_table: ava_test_table_1433140232779 in 1 conn: 2313 ms [2015-06-01 14:30:40] [main:7314ms]-[INFO] [AvailableTest:101][test_create_table] 
+test_put: 10 items in 1 conn: 17 ms [2015-06-01 14:30:45] [main:12337ms]-[INFO] [AvailableTest:147][test_put] 
+test_get: 10 items in 1 conn: 28 ms [2015-06-01 14:30:51] [main:18366ms]-[INFO] [AvailableTest:173][test_get] 
+drop table ava_test_table_1433140232779 failure [2015-06-01 14:30:56] [main:23378ms]-[ERROR] [Connection:101][dropTable] 
+org.apache.thrift.TApplicationException: Internal error processing dropTable
+	at org.apache.thrift.TApplicationException.read(TApplicationException.java:111)
+	at org.apache.thrift.TServiceClient.receiveBase(TServiceClient.java:71)
+	at org.cesl.sensordb.service.SensorDBRPC$Client.recv_dropTable(SensorDBRPC.java:161)
+	at org.cesl.sensordb.service.SensorDBRPC$Client.dropTable(SensorDBRPC.java:148)
+	at org.cesl.sensordb.client.Connection.dropTable(Connection.java:99)
+	at com.inesa.sensordb.api.test.AvailableTest.test_drop_table(AvailableTest.java:118)
+	at com.inesa.sensordb.api.test.AvailableTest.run_available_test(AvailableTest.java:66)
+	at com.inesa.sensordb.api.Main.main(Main.java:59)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at com.intellij.rt.execution.application.AppMain.main(AppMain.java:140)
+test_drop_table: ava_test_table_1433140232779 in 1 conn: 13 ms [2015-06-01 14:30:56] [main:23379ms]-[INFO] [AvailableTest:120][test_drop_table] 
+drop matched tables failure, regex is ^ava_test_table_.* [2015-06-01 14:41:19] [main:1ms]-[ERROR] [Connection:115][dropTables] 
+org.apache.thrift.TApplicationException: Internal error processing dropTables
+	at org.apache.thrift.TApplicationException.read(TApplicationException.java:111)
+	at org.apache.thrift.TServiceClient.receiveBase(TServiceClient.java:71)
+	at org.cesl.sensordb.service.SensorDBRPC$Client.recv_dropTables(SensorDBRPC.java:181)
+	at org.cesl.sensordb.service.SensorDBRPC$Client.dropTables(SensorDBRPC.java:168)
+	at org.cesl.sensordb.client.Connection.dropTables(Connection.java:113)
+	at com.inesa.sensordb.api.Main.main(Main.java:45)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at com.intellij.rt.execution.application.AppMain.main(AppMain.java:140)
+batchPut: 40 items in 1 conn: 9 ms [2015-06-01 14:42:45] [main:0ms]-[INFO] [Main:129][multi_put] 
+batchPut: 40 items in 1 conn: 1 ms [2015-06-01 14:42:45] [main:2ms]-[INFO] [Main:129][multi_put] 
+batchPut: 40 items in 1 conn: 0 ms [2015-06-01 14:42:45] [main:3ms]-[INFO] [Main:129][multi_put] 
+batchPut: 40 items in 1 conn: 0 ms [2015-06-01 14:42:45] [main:4ms]-[INFO] [Main:129][multi_put] 
+batchPut: 4000 items in 1 conn: 46 ms [2015-06-01 14:42:53] [main:0ms]-[INFO] [Main:129][multi_put] 
+batchPut: 4000 items in 1 conn: 82 ms [2015-06-01 14:42:53] [main:84ms]-[INFO] [Main:129][multi_put] 
+batchPut: 4000 items in 1 conn: 29 ms [2015-06-01 14:42:53] [main:114ms]-[INFO] [Main:129][multi_put] 
+batchPut: 4000 items in 1 conn: 22 ms [2015-06-01 14:42:53] [main:136ms]-[INFO] [Main:129][multi_put] 
+batchPut: 1000 items in 1 conn: 47 ms [2015-06-01 14:43:34] [main:0ms]-[INFO] [Main:130][multi_put] 
+batchPut: 1000 items in 1 conn: 31 ms [2015-06-01 14:43:34] [main:33ms]-[INFO] [Main:130][multi_put] 
+batchPut: 1000 items in 1 conn: 27 ms [2015-06-01 14:43:34] [main:61ms]-[INFO] [Main:130][multi_put] 
+batchPut: 1000 items in 1 conn: 24 ms [2015-06-01 14:43:35] [main:85ms]-[INFO] [Main:130][multi_put] 
+batchPut: 1000 items in 1 conn: 48 ms [2015-06-01 14:43:41] [main:0ms]-[INFO] [Main:130][multi_put] 
+batchPut: 1000 items in 1 conn: 38 ms [2015-06-01 14:43:41] [main:40ms]-[INFO] [Main:130][multi_put] 
+batchPut: 1000 items in 1 conn: 30 ms [2015-06-01 14:43:41] [main:73ms]-[INFO] [Main:130][multi_put] 
+batchPut: 1000 items in 1 conn: 28 ms [2015-06-01 14:43:41] [main:102ms]-[INFO] [Main:130][multi_put] 
+batchPut: 1000 items in 1 conn: 48 ms [2015-06-01 14:43:43] [main:0ms]-[INFO] [Main:130][multi_put] 
+batchPut: 1000 items in 1 conn: 30 ms [2015-06-01 14:43:43] [main:32ms]-[INFO] [Main:130][multi_put] 
+batchPut: 1000 items in 1 conn: 23 ms [2015-06-01 14:43:43] [main:57ms]-[INFO] [Main:130][multi_put] 
+batchPut: 1000 items in 1 conn: 24 ms [2015-06-01 14:43:44] [main:82ms]-[INFO] [Main:130][multi_put] 
+batchPut: 1000 items in 1 conn: 48 ms [2015-06-01 14:43:46] [main:0ms]-[INFO] [Main:130][multi_put] 
+batchPut: 1000 items in 1 conn: 33 ms [2015-06-01 14:43:46] [main:35ms]-[INFO] [Main:130][multi_put] 
+batchPut: 1000 items in 1 conn: 28 ms [2015-06-01 14:43:46] [main:64ms]-[INFO] [Main:130][multi_put] 
+batchPut: 1000 items in 1 conn: 21 ms [2015-06-01 14:43:46] [main:85ms]-[INFO] [Main:130][multi_put] 
+batchPut: 10000 items in 1 conn: 278 ms [2015-06-01 14:44:22] [main:0ms]-[INFO] [Main:130][multi_put] 
+batchPut: 10000 items in 1 conn: 277 ms [2015-06-01 14:44:23] [main:279ms]-[INFO] [Main:130][multi_put] 
+batchPut: 10000 items in 1 conn: 446 ms [2015-06-01 14:44:23] [main:726ms]-[INFO] [Main:130][multi_put] 
+batchPut: 10000 items in 1 conn: 243 ms [2015-06-01 14:45:58] [main:0ms]-[INFO] [Main:130][multi_put] 
+batchPut: 10000 items in 1 conn: 257 ms [2015-06-01 14:45:58] [main:259ms]-[INFO] [Main:130][multi_put] 
+batchPut: 10000 items in 1 conn: 473 ms [2015-06-01 14:45:59] [main:733ms]-[INFO] [Main:130][multi_put] 
+batchPut: 100000 items in 1 conn: 5464 ms [2015-06-01 14:46:52] [main:0ms]-[INFO] [Main:130][multi_put] 
+batchPut: 100000 items in 1 conn: 6228 ms [2015-06-01 14:46:58] [main:6230ms]-[INFO] [Main:130][multi_put] 
+batchPut: 100000 items in 1 conn: 6221 ms [2015-06-01 14:47:04] [main:12458ms]-[INFO] [Main:130][multi_put] 
+batchPut: 200000 items in 1 conn: 12132 ms [2015-06-01 14:47:52] [main:0ms]-[INFO] [Main:130][multi_put] 
+put new rows into table trivial_table_1 failure [2015-06-01 14:47:53] [main:285ms]-[ERROR] [Connection:215][batchPut] 
+org.apache.thrift.transport.TTransportException: java.net.SocketException: 断开的管道
+	at org.apache.thrift.transport.TIOStreamTransport.write(TIOStreamTransport.java:147)
+	at org.apache.thrift.transport.TFramedTransport.flush(TFramedTransport.java:157)
+	at org.apache.thrift.TServiceClient.sendBase(TServiceClient.java:65)
+	at org.cesl.sensordb.service.SensorDBRPC$Client.send_batchPut(SensorDBRPC.java:213)
+	at org.cesl.sensordb.service.SensorDBRPC$Client.batchPut(SensorDBRPC.java:205)
+	at org.cesl.sensordb.client.Connection.batchPut(Connection.java:212)
+	at com.inesa.sensordb.api.Main.multi_put(Main.java:126)
+	at com.inesa.sensordb.api.Main.main(Main.java:61)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at com.intellij.rt.execution.application.AppMain.main(AppMain.java:140)
+Caused by: java.net.SocketException: 断开的管道
+	at java.net.SocketOutputStream.socketWrite0(Native Method)
+	at java.net.SocketOutputStream.socketWrite(SocketOutputStream.java:113)
+	at java.net.SocketOutputStream.write(SocketOutputStream.java:159)
+	at java.io.BufferedOutputStream.write(BufferedOutputStream.java:122)
+	at org.apache.thrift.transport.TIOStreamTransport.write(TIOStreamTransport.java:145)
+	... 12 more
+batchPut: 200000 items in 1 conn: 286 ms [2015-06-01 14:47:53] [main:288ms]-[INFO] [Main:130][multi_put] 
+put new rows into table trivial_table_1 failure [2015-06-01 14:47:53] [main:554ms]-[ERROR] [Connection:215][batchPut] 
+org.apache.thrift.transport.TTransportException: java.net.SocketException: 断开的管道
+	at org.apache.thrift.transport.TIOStreamTransport.write(TIOStreamTransport.java:147)
+	at org.apache.thrift.transport.TFramedTransport.flush(TFramedTransport.java:157)
+	at org.apache.thrift.TServiceClient.sendBase(TServiceClient.java:65)
+	at org.cesl.sensordb.service.SensorDBRPC$Client.send_batchPut(SensorDBRPC.java:213)
+	at org.cesl.sensordb.service.SensorDBRPC$Client.batchPut(SensorDBRPC.java:205)
+	at org.cesl.sensordb.client.Connection.batchPut(Connection.java:212)
+	at com.inesa.sensordb.api.Main.multi_put(Main.java:126)
+	at com.inesa.sensordb.api.Main.main(Main.java:61)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at com.intellij.rt.execution.application.AppMain.main(AppMain.java:140)
+Caused by: java.net.SocketException: 断开的管道
+	at java.net.SocketOutputStream.socketWrite0(Native Method)
+	at java.net.SocketOutputStream.socketWrite(SocketOutputStream.java:113)
+	at java.net.SocketOutputStream.write(SocketOutputStream.java:159)
+	at java.io.BufferedOutputStream.flushBuffer(BufferedOutputStream.java:82)
+	at java.io.BufferedOutputStream.write(BufferedOutputStream.java:121)
+	at org.apache.thrift.transport.TIOStreamTransport.write(TIOStreamTransport.java:145)
+	... 12 more
+batchPut: 200000 items in 1 conn: 267 ms [2015-06-01 14:47:53] [main:555ms]-[INFO] [Main:130][multi_put] 
+batchPut: 200000 items in 1 conn: 12167 ms [2015-06-01 14:51:57] [main:0ms]-[INFO] [Main:130][multi_put] 
+put new rows into table trivial_table_1 failure [2015-06-01 14:51:57] [main:300ms]-[ERROR] [Connection:215][batchPut] 
+org.apache.thrift.transport.TTransportException: java.net.SocketException: 断开的管道
+	at org.apache.thrift.transport.TIOStreamTransport.write(TIOStreamTransport.java:147)
+	at org.apache.thrift.transport.TFramedTransport.flush(TFramedTransport.java:157)
+	at org.apache.thrift.TServiceClient.sendBase(TServiceClient.java:65)
+	at org.cesl.sensordb.service.SensorDBRPC$Client.send_batchPut(SensorDBRPC.java:213)
+	at org.cesl.sensordb.service.SensorDBRPC$Client.batchPut(SensorDBRPC.java:205)
+	at org.cesl.sensordb.client.Connection.batchPut(Connection.java:212)
+	at com.inesa.sensordb.api.Main.multi_put(Main.java:126)
+	at com.inesa.sensordb.api.Main.main(Main.java:61)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at com.intellij.rt.execution.application.AppMain.main(AppMain.java:140)
+Caused by: java.net.SocketException: 断开的管道
+	at java.net.SocketOutputStream.socketWrite0(Native Method)
+	at java.net.SocketOutputStream.socketWrite(SocketOutputStream.java:113)
+	at java.net.SocketOutputStream.write(SocketOutputStream.java:159)
+	at java.io.BufferedOutputStream.write(BufferedOutputStream.java:122)
+	at org.apache.thrift.transport.TIOStreamTransport.write(TIOStreamTransport.java:145)
+	... 12 more
+batchPut: 200000 items in 1 conn: 302 ms [2015-06-01 14:51:57] [main:303ms]-[INFO] [Main:130][multi_put] 
+put new rows into table trivial_table_1 failure [2015-06-01 14:51:57] [main:550ms]-[ERROR] [Connection:215][batchPut] 
+org.apache.thrift.transport.TTransportException: java.net.SocketException: 断开的管道
+	at org.apache.thrift.transport.TIOStreamTransport.write(TIOStreamTransport.java:147)
+	at org.apache.thrift.transport.TFramedTransport.flush(TFramedTransport.java:157)
+	at org.apache.thrift.TServiceClient.sendBase(TServiceClient.java:65)
+	at org.cesl.sensordb.service.SensorDBRPC$Client.send_batchPut(SensorDBRPC.java:213)
+	at org.cesl.sensordb.service.SensorDBRPC$Client.batchPut(SensorDBRPC.java:205)
+	at org.cesl.sensordb.client.Connection.batchPut(Connection.java:212)
+	at com.inesa.sensordb.api.Main.multi_put(Main.java:126)
+	at com.inesa.sensordb.api.Main.main(Main.java:61)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at com.intellij.rt.execution.application.AppMain.main(AppMain.java:140)
+Caused by: java.net.SocketException: 断开的管道
+	at java.net.SocketOutputStream.socketWrite0(Native Method)
+	at java.net.SocketOutputStream.socketWrite(SocketOutputStream.java:113)
+	at java.net.SocketOutputStream.write(SocketOutputStream.java:159)
+	at java.io.BufferedOutputStream.flushBuffer(BufferedOutputStream.java:82)
+	at java.io.BufferedOutputStream.write(BufferedOutputStream.java:121)
+	at org.apache.thrift.transport.TIOStreamTransport.write(TIOStreamTransport.java:145)
+	... 12 more
+batchPut: 200000 items in 1 conn: 247 ms [2015-06-01 14:51:57] [main:550ms]-[INFO] [Main:130][multi_put] 
+drop table trivial_table_1 failure [2015-06-01 14:52:54] [main:1ms]-[ERROR] [Connection:101][dropTable] 
+org.apache.thrift.TApplicationException: Internal error processing dropTable
+	at org.apache.thrift.TApplicationException.read(TApplicationException.java:111)
+	at org.apache.thrift.TServiceClient.receiveBase(TServiceClient.java:71)
+	at org.cesl.sensordb.service.SensorDBRPC$Client.recv_dropTable(SensorDBRPC.java:161)
+	at org.cesl.sensordb.service.SensorDBRPC$Client.dropTable(SensorDBRPC.java:148)
+	at org.cesl.sensordb.client.Connection.dropTable(Connection.java:99)
+	at com.inesa.sensordb.api.Main.main(Main.java:46)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at com.intellij.rt.execution.application.AppMain.main(AppMain.java:140)
+create table trivial_table_1 failure [2015-06-01 14:53:21] [main:0ms]-[ERROR] [Connection:87][createTable] 
+org.apache.thrift.TApplicationException: Internal error processing createTable
+	at org.apache.thrift.TApplicationException.read(TApplicationException.java:111)
+	at org.apache.thrift.TServiceClient.receiveBase(TServiceClient.java:71)
+	at org.cesl.sensordb.service.SensorDBRPC$Client.recv_createTable(SensorDBRPC.java:141)
+	at org.cesl.sensordb.service.SensorDBRPC$Client.createTable(SensorDBRPC.java:128)
+	at org.cesl.sensordb.client.Connection.createTable(Connection.java:85)
+	at com.inesa.sensordb.api.Main.main(Main.java:46)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at com.intellij.rt.execution.application.AppMain.main(AppMain.java:140)
+batchPut: 200000 items in 1 conn: 12111 ms [2015-06-01 14:54:07] [main:0ms]-[INFO] [Main:131][multi_put] 
+put new rows into table trivial_table_1 failure [2015-06-01 14:54:08] [main:297ms]-[ERROR] [Connection:215][batchPut] 
+org.apache.thrift.transport.TTransportException: java.net.SocketException: 断开的管道
+	at org.apache.thrift.transport.TIOStreamTransport.write(TIOStreamTransport.java:147)
+	at org.apache.thrift.transport.TFramedTransport.flush(TFramedTransport.java:157)
+	at org.apache.thrift.TServiceClient.sendBase(TServiceClient.java:65)
+	at org.cesl.sensordb.service.SensorDBRPC$Client.send_batchPut(SensorDBRPC.java:213)
+	at org.cesl.sensordb.service.SensorDBRPC$Client.batchPut(SensorDBRPC.java:205)
+	at org.cesl.sensordb.client.Connection.batchPut(Connection.java:212)
+	at com.inesa.sensordb.api.Main.multi_put(Main.java:127)
+	at com.inesa.sensordb.api.Main.main(Main.java:62)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at com.intellij.rt.execution.application.AppMain.main(AppMain.java:140)
+Caused by: java.net.SocketException: 断开的管道
+	at java.net.SocketOutputStream.socketWrite0(Native Method)
+	at java.net.SocketOutputStream.socketWrite(SocketOutputStream.java:113)
+	at java.net.SocketOutputStream.write(SocketOutputStream.java:159)
+	at java.io.BufferedOutputStream.write(BufferedOutputStream.java:122)
+	at org.apache.thrift.transport.TIOStreamTransport.write(TIOStreamTransport.java:145)
+	... 12 more
+batchPut: 200000 items in 1 conn: 294 ms [2015-06-01 14:54:08] [main:300ms]-[INFO] [Main:131][multi_put] 
+put new rows into table trivial_table_1 failure [2015-06-01 14:54:08] [main:530ms]-[ERROR] [Connection:215][batchPut] 
+org.apache.thrift.transport.TTransportException: java.net.SocketException: 断开的管道
+	at org.apache.thrift.transport.TIOStreamTransport.write(TIOStreamTransport.java:147)
+	at org.apache.thrift.transport.TFramedTransport.flush(TFramedTransport.java:157)
+	at org.apache.thrift.TServiceClient.sendBase(TServiceClient.java:65)
+	at org.cesl.sensordb.service.SensorDBRPC$Client.send_batchPut(SensorDBRPC.java:213)
+	at org.cesl.sensordb.service.SensorDBRPC$Client.batchPut(SensorDBRPC.java:205)
+	at org.cesl.sensordb.client.Connection.batchPut(Connection.java:212)
+	at com.inesa.sensordb.api.Main.multi_put(Main.java:127)
+	at com.inesa.sensordb.api.Main.main(Main.java:62)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at com.intellij.rt.execution.application.AppMain.main(AppMain.java:140)
+Caused by: java.net.SocketException: 断开的管道
+	at java.net.SocketOutputStream.socketWrite0(Native Method)
+	at java.net.SocketOutputStream.socketWrite(SocketOutputStream.java:113)
+	at java.net.SocketOutputStream.write(SocketOutputStream.java:159)
+	at java.io.BufferedOutputStream.flushBuffer(BufferedOutputStream.java:82)
+	at java.io.BufferedOutputStream.write(BufferedOutputStream.java:121)
+	at org.apache.thrift.transport.TIOStreamTransport.write(TIOStreamTransport.java:145)
+	... 12 more
+batchPut: 200000 items in 1 conn: 231 ms [2015-06-01 14:54:08] [main:531ms]-[INFO] [Main:131][multi_put] 
+batchPut: 200000 items in 1 conn: 12224 ms [2015-06-01 14:59:15] [main:0ms]-[INFO] [Main:131][multi_put] 
+put new rows into table trivial_table_1 failure [2015-06-01 14:59:15] [main:230ms]-[ERROR] [Connection:215][batchPut] 
+org.apache.thrift.transport.TTransportException: java.net.SocketException: Connection reset
+	at org.apache.thrift.transport.TIOStreamTransport.write(TIOStreamTransport.java:147)
+	at org.apache.thrift.transport.TFramedTransport.flush(TFramedTransport.java:157)
+	at org.apache.thrift.TServiceClient.sendBase(TServiceClient.java:65)
+	at org.cesl.sensordb.service.SensorDBRPC$Client.send_batchPut(SensorDBRPC.java:213)
+	at org.cesl.sensordb.service.SensorDBRPC$Client.batchPut(SensorDBRPC.java:205)
+	at org.cesl.sensordb.client.Connection.batchPut(Connection.java:212)
+	at com.inesa.sensordb.api.Main.multi_put(Main.java:127)
+	at com.inesa.sensordb.api.Main.main(Main.java:62)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at com.intellij.rt.execution.application.AppMain.main(AppMain.java:140)
+Caused by: java.net.SocketException: Connection reset
+	at java.net.SocketOutputStream.socketWrite(SocketOutputStream.java:118)
+	at java.net.SocketOutputStream.write(SocketOutputStream.java:159)
+	at java.io.BufferedOutputStream.write(BufferedOutputStream.java:122)
+	at org.apache.thrift.transport.TIOStreamTransport.write(TIOStreamTransport.java:145)
+	... 12 more
+batchPut: 200000 items in 1 conn: 231 ms [2015-06-01 14:59:15] [main:233ms]-[INFO] [Main:131][multi_put] 
+put new rows into table trivial_table_1 failure [2015-06-01 14:59:15] [main:504ms]-[ERROR] [Connection:215][batchPut] 
+org.apache.thrift.transport.TTransportException: java.net.SocketException: 断开的管道
+	at org.apache.thrift.transport.TIOStreamTransport.write(TIOStreamTransport.java:147)
+	at org.apache.thrift.transport.TFramedTransport.flush(TFramedTransport.java:157)
+	at org.apache.thrift.TServiceClient.sendBase(TServiceClient.java:65)
+	at org.cesl.sensordb.service.SensorDBRPC$Client.send_batchPut(SensorDBRPC.java:213)
+	at org.cesl.sensordb.service.SensorDBRPC$Client.batchPut(SensorDBRPC.java:205)
+	at org.cesl.sensordb.client.Connection.batchPut(Connection.java:212)
+	at com.inesa.sensordb.api.Main.multi_put(Main.java:127)
+	at com.inesa.sensordb.api.Main.main(Main.java:62)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at com.intellij.rt.execution.application.AppMain.main(AppMain.java:140)
+Caused by: java.net.SocketException: 断开的管道
+	at java.net.SocketOutputStream.socketWrite0(Native Method)
+	at java.net.SocketOutputStream.socketWrite(SocketOutputStream.java:113)
+	at java.net.SocketOutputStream.write(SocketOutputStream.java:159)
+	at java.io.BufferedOutputStream.flushBuffer(BufferedOutputStream.java:82)
+	at java.io.BufferedOutputStream.write(BufferedOutputStream.java:121)
+	at org.apache.thrift.transport.TIOStreamTransport.write(TIOStreamTransport.java:145)
+	... 12 more
+batchPut: 200000 items in 1 conn: 271 ms [2015-06-01 14:59:15] [main:504ms]-[INFO] [Main:131][multi_put] 
+batchPut: 200000 items in 1 conn: 12421 ms [2015-06-01 14:59:55] [main:0ms]-[INFO] [Main:130][multi_put] 
+put new rows into table trivial_table_1 failure [2015-06-01 14:59:55] [main:231ms]-[ERROR] [Connection:215][batchPut] 
+org.apache.thrift.transport.TTransportException: java.net.SocketException: 断开的管道
+	at org.apache.thrift.transport.TIOStreamTransport.write(TIOStreamTransport.java:147)
+	at org.apache.thrift.transport.TFramedTransport.flush(TFramedTransport.java:157)
+	at org.apache.thrift.TServiceClient.sendBase(TServiceClient.java:65)
+	at org.cesl.sensordb.service.SensorDBRPC$Client.send_batchPut(SensorDBRPC.java:213)
+	at org.cesl.sensordb.service.SensorDBRPC$Client.batchPut(SensorDBRPC.java:205)
+	at org.cesl.sensordb.client.Connection.batchPut(Connection.java:212)
+	at com.inesa.sensordb.api.Main.multi_put(Main.java:126)
+	at com.inesa.sensordb.api.Main.main(Main.java:62)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at com.intellij.rt.execution.application.AppMain.main(AppMain.java:140)
+Caused by: java.net.SocketException: 断开的管道
+	at java.net.SocketOutputStream.socketWrite0(Native Method)
+	at java.net.SocketOutputStream.socketWrite(SocketOutputStream.java:113)
+	at java.net.SocketOutputStream.write(SocketOutputStream.java:159)
+	at java.io.BufferedOutputStream.write(BufferedOutputStream.java:122)
+	at org.apache.thrift.transport.TIOStreamTransport.write(TIOStreamTransport.java:145)
+	... 12 more
+batchPut: 200000 items in 1 conn: 233 ms [2015-06-01 14:59:55] [main:234ms]-[INFO] [Main:130][multi_put] 
+put new rows into table trivial_table_1 failure [2015-06-01 14:59:56] [main:515ms]-[ERROR] [Connection:215][batchPut] 
+org.apache.thrift.transport.TTransportException: java.net.SocketException: 断开的管道
+	at org.apache.thrift.transport.TIOStreamTransport.write(TIOStreamTransport.java:147)
+	at org.apache.thrift.transport.TFramedTransport.flush(TFramedTransport.java:157)
+	at org.apache.thrift.TServiceClient.sendBase(TServiceClient.java:65)
+	at org.cesl.sensordb.service.SensorDBRPC$Client.send_batchPut(SensorDBRPC.java:213)
+	at org.cesl.sensordb.service.SensorDBRPC$Client.batchPut(SensorDBRPC.java:205)
+	at org.cesl.sensordb.client.Connection.batchPut(Connection.java:212)
+	at com.inesa.sensordb.api.Main.multi_put(Main.java:126)
+	at com.inesa.sensordb.api.Main.main(Main.java:62)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at com.intellij.rt.execution.application.AppMain.main(AppMain.java:140)
+Caused by: java.net.SocketException: 断开的管道
+	at java.net.SocketOutputStream.socketWrite0(Native Method)
+	at java.net.SocketOutputStream.socketWrite(SocketOutputStream.java:113)
+	at java.net.SocketOutputStream.write(SocketOutputStream.java:159)
+	at java.io.BufferedOutputStream.flushBuffer(BufferedOutputStream.java:82)
+	at java.io.BufferedOutputStream.write(BufferedOutputStream.java:121)
+	at org.apache.thrift.transport.TIOStreamTransport.write(TIOStreamTransport.java:145)
+	... 12 more
+batchPut: 200000 items in 1 conn: 282 ms [2015-06-01 14:59:56] [main:516ms]-[INFO] [Main:130][multi_put] 
+test_list_tables: 6 tables in 1 conn: 90 ms [2015-06-01 15:00:18] [main:0ms]-[INFO] [AvailableTest:81][test_list_tables] 
+test_create_table: ava_test_table_1433142018171 in 1 conn: 2129 ms [2015-06-01 15:00:25] [main:7132ms]-[INFO] [AvailableTest:101][test_create_table] 
+test_put: 10 items in 1 conn: 6 ms [2015-06-01 15:00:30] [main:12142ms]-[INFO] [AvailableTest:147][test_put] 
+test_get: 10 items in 1 conn: 325 ms [2015-06-01 15:00:36] [main:18468ms]-[INFO] [AvailableTest:173][test_get] 
+test_drop_table: ava_test_table_1433142018171 in 1 conn: 3250 ms [2015-06-01 15:00:44] [main:26719ms]-[INFO] [AvailableTest:120][test_drop_table] 
+test_list_tables: 6 tables in 1 conn: 65 ms [2015-06-01 15:01:05] [Thread-0:0ms]-[INFO] [AvailableTest:81][test_list_tables] 
+test_list_tables: 6 tables in 1 conn: 33 ms [2015-06-01 15:01:05] [Thread-1:26ms]-[INFO] [AvailableTest:81][test_list_tables] 
+test_create_table: ava_test_table_1433142065380 in 1 conn: 594 ms [2015-06-01 15:01:11] [Thread-1:5620ms]-[INFO] [AvailableTest:101][test_create_table] 
+test_create_table: ava_test_table_1433142065380 in 1 conn: 2448 ms [2015-06-01 15:01:12] [Thread-0:7449ms]-[INFO] [AvailableTest:101][test_create_table] 
+test_put: 10 items in 1 conn: 11 ms [2015-06-01 15:01:16] [Thread-1:10633ms]-[INFO] [AvailableTest:147][test_put] 
+test_put: 10 items in 1 conn: 3 ms [2015-06-01 15:01:17] [Thread-0:12455ms]-[INFO] [AvailableTest:147][test_put] 
+test_get: 20 items in 1 conn: 50 ms [2015-06-01 15:01:22] [Thread-1:16684ms]-[INFO] [AvailableTest:173][test_get] 
+test_get: 20 items in 1 conn: 19 ms [2015-06-01 15:01:23] [Thread-0:18475ms]-[INFO] [AvailableTest:173][test_get] 
+test_drop_table: ava_test_table_1433142065380 in 1 conn: 806 ms [2015-06-01 15:01:29] [Thread-0:24282ms]-[INFO] [AvailableTest:120][test_drop_table] 
+test_drop_table: ava_test_table_1433142065380 in 1 conn: 2867 ms [2015-06-01 15:01:30] [Thread-1:24552ms]-[INFO] [AvailableTest:120][test_drop_table] 
+test_list_tables: 6 tables in 1 conn: 62 ms [2015-06-01 15:02:30] [Thread-1:0ms]-[INFO] [AvailableTest:81][test_list_tables] 
+test_list_tables: 6 tables in 1 conn: 36 ms [2015-06-01 15:02:30] [Thread-0:661ms]-[INFO] [AvailableTest:81][test_list_tables] 
+test_create_table: ava_test_table_1433142150014 in 1 conn: 1307 ms [2015-06-01 15:02:36] [Thread-1:6308ms]-[INFO] [AvailableTest:101][test_create_table] 
+test_create_table: ava_test_table_1433142150014 in 1 conn: 1254 ms [2015-06-01 15:02:37] [Thread-0:6915ms]-[INFO] [AvailableTest:101][test_create_table] 
+test_put: 10 items in 1 conn: 7 ms [2015-06-01 15:02:41] [Thread-1:11317ms]-[INFO] [AvailableTest:147][test_put] 
+test_put: 10 items in 1 conn: 3 ms [2015-06-01 15:02:42] [Thread-0:11920ms]-[INFO] [AvailableTest:147][test_put] 
+test_get: 20 items in 1 conn: 45 ms [2015-06-01 15:02:47] [Thread-1:17364ms]-[INFO] [AvailableTest:173][test_get] 
+test_get: 20 items in 1 conn: 30 ms [2015-06-01 15:02:48] [Thread-0:17950ms]-[INFO] [AvailableTest:173][test_get] 
+test_drop_table: ava_test_table_1433142150014 in 1 conn: 475 ms [2015-06-01 15:02:53] [Thread-0:23425ms]-[INFO] [AvailableTest:120][test_drop_table] 
+test_drop_table: ava_test_table_1433142150014 in 1 conn: 2857 ms [2015-06-01 15:02:55] [Thread-1:25221ms]-[INFO] [AvailableTest:120][test_drop_table] 
+test_list_tables: 6 tables in 1 conn: 51 ms [2015-06-01 15:03:09] [Thread-1:0ms]-[INFO] [AvailableTest:81][test_list_tables] 
+test_list_tables: 6 tables in 1 conn: 39 ms [2015-06-01 15:03:09] [Thread-0:231ms]-[INFO] [AvailableTest:81][test_list_tables] 
+test_create_table: ava_test_table_1433142189289 in 1 conn: 2421 ms [2015-06-01 15:03:16] [Thread-1:7423ms]-[INFO] [AvailableTest:101][test_create_table] 
+test_create_table: ava_test_table_1433142189548 in 1 conn: 2341 ms [2015-06-01 15:03:16] [Thread-0:7573ms]-[INFO] [AvailableTest:101][test_create_table] 
+test_put: 10 items in 1 conn: 6 ms [2015-06-01 15:03:21] [Thread-1:12431ms]-[INFO] [AvailableTest:147][test_put] 
+test_put: 10 items in 1 conn: 3 ms [2015-06-01 15:03:21] [Thread-0:12578ms]-[INFO] [AvailableTest:147][test_put] 
+test_get: 10 items in 1 conn: 53 ms [2015-06-01 15:03:27] [Thread-1:18485ms]-[INFO] [AvailableTest:173][test_get] 
+test_get: 10 items in 1 conn: 34 ms [2015-06-01 15:03:27] [Thread-0:18613ms]-[INFO] [AvailableTest:173][test_get] 
+test_drop_table: ava_test_table_1433142189289 in 1 conn: 4675 ms [2015-06-01 15:03:37] [Thread-1:28161ms]-[INFO] [AvailableTest:120][test_drop_table] 
+test_drop_table: ava_test_table_1433142189548 in 1 conn: 4839 ms [2015-06-01 15:03:37] [Thread-0:28453ms]-[INFO] [AvailableTest:120][test_drop_table] 
