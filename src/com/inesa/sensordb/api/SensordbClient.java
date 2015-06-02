@@ -336,26 +336,26 @@ public class SensordbClient implements ClientInterface {
 
             long starttimewhole = System.currentTimeMillis();
             while (result_set.next()) {
-                result_set.getString("id");
-                item.id = result_set.getString("id");
-                item.ts = result_set.getLong("ts");
-                item.x = result_set.getDouble("x");
-                item.y = result_set.getDouble("y");
-                item.z = result_set.getDouble("z");
-//                String tst = result_set.getString("word_separators");
-                for (int i=0; i<valuekeys.size(); ++i){
-                    item.values.put(valuekeys.get(i),
-                            result_set.getString(valuekeys.get(i)));
-                }
-//                System.out.println("item - sensorID:" + item.id + " timestamp:"
+//                result_set.getString("id");
+//                item.id = result_set.getString("id");
+//                item.ts = result_set.getLong("ts");
+//                item.x = result_set.getDouble("x");
+//                item.y = result_set.getDouble("y");
+//                item.z = result_set.getDouble("z");
+////                String tst = result_set.getString("word_separators");
+//                for (int i=0; i<valuekeys.size(); ++i){
+//                    item.values.put(valuekeys.get(i),
+//                            result_set.getString(valuekeys.get(i)));
+//                }
+//                System.out.println("item - sensorID: " + item.id + "  timestamp: "
 //                        + item.ts/*+
 //                        " tst:"+tst+" x:"+item.x+" y:"+item.y+" z:"+item.z*/
-//                        +" values: "+item.values);
+//                        +"  values: "+item.values);
 //                jsonstr = gson.toJson(item);
 //                json_list.add(jsonstr);
             }
             long endtimewhole = System.currentTimeMillis();
-            logger.info("scan " + result_set.getSize() + " items in 1 conn: "
+            logger.info("fetch " + result_set.getSize() + " items in 1 conn: "
                     + (endtimewhole - starttimewhole) + " ms");
 
         } catch (DBException e) {

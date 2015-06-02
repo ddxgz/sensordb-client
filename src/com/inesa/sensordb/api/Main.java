@@ -53,21 +53,24 @@ public class Main {
 //
 //        put_from_redis(conn);
 //        put_from_redis_foreverconn(conn, new_table_prefix + "4");
+//
 
-        ConcurrentTest test = new ConcurrentTest();
-        test.concurrent_run(2);
-//        AvailableTest test = new AvailableTest();
+//        ConcurrentTest test = new ConcurrentTest();
+//        test.concurrent_run(4);
+        AvailableTest test = new AvailableTest();
 //        test.run_available_test();
+//        test.fetch_performance_test(5);
+        test.batchPut_performance_test(10);
 
 //        multi_put(3,200000);
 
-        int[] nums = {10000, 10000/*, 5000, 10000, 50000, 100000, 200000, 300000*/};
-        for(int num:nums) {
-//            logger.info("num: " + num);
-            for (int i = 0; i < 1; ++i) {
-//                put_performance(conn, new_table_prefix + "1", num);
-            }
-        }
+//        int[] nums = {10000, 10000/*, 5000, 10000, 50000, 100000, 200000, 300000*/};
+//        for(int num:nums) {
+////            logger.info("num: " + num);
+//            for (int i = 0; i < 1; ++i) {
+//                put_performance(conn, new_table_prefix + "1", 1000000);
+//            }
+//        }
 
 //        test_interface();
 

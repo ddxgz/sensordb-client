@@ -1,7 +1,9 @@
 package com.inesa.sensordb.api.test;
 
 import com.inesa.sensordb.api.SensordbItem;
+import org.cesl.sensordb.core.Item;
 
+import java.nio.ByteBuffer;
 import java.util.*;
 
 /**
@@ -28,6 +30,29 @@ public class Utils {
             item.z = spacexyz[2] + i;
             item.values = values;
             items.add(item);
+        }
+
+        return items;
+    }
+
+    public List<Item> get_batch_items(int num) {
+//        Map<String, ByteBuffer> values = new HashMap();
+        Date date = new Date();
+        Item item = new Item();
+        List<Item> items = new ArrayList<Item>();
+        for (int i = 0; i < num; ++i) {
+            Map<String, ByteBuffer> values = new HashMap();
+            values.put("key_test1" + String.valueOf(i),
+                    ByteBuffer.wrap(("value_" + String.valueOf(i)).getBytes()));
+            item.sensorID = ByteBuffer.wrap("testsendor".concat("_f_")
+                    .concat(String.valueOf(i)).getBytes());
+            item.sampledts = date.getTime();
+            item.x = (item.sampledts%3+1)+i;
+            item.y = (item.sampledts%3+2)+i;
+            item.z = (item.sampledts%3+3)+i;
+            item.values = values;
+            items.add(item);
+
         }
 
         return items;
